@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      player2GunCharged_0: -598699688032703521
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

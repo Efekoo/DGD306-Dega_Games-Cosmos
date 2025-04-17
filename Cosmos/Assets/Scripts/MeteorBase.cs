@@ -3,7 +3,7 @@ using UnityEngine;
 public class MeteorBase : MonoBehaviour
 {
     public float speed = 5f;
-    public float destroyX = -4f;
+    public float destroyX = -9f;
 
     private Vector2 direction;
 

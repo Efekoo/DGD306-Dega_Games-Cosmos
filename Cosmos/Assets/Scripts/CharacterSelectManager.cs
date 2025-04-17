@@ -38,13 +38,13 @@ public class CharacterSelectManager : MonoBehaviour
             {
                 PlayerSelectionData.isCoop = false;
                 PlayerSelectionData.player2Index = -1;
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene("Tutorial");
             }
             else if (Input.GetKeyDown(KeyCode.Y))
             {
                 PlayerSelectionData.isCoop = true;
                 PlayerSelectionData.player2Index = (PlayerSelectionData.player1Index == 0) ? 1 : 0;
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene("Tutorial");
             }
         }
     }

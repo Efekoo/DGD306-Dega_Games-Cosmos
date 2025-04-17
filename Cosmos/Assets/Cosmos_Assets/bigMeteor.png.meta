@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bigMeteor_0: 8185413630043295261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
