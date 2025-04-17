@@ -31,7 +31,7 @@ public class CharacterSelectManager : MonoBehaviour
             Debug.Log("Player 1 seçimi: Gemi 2");
         }
 
-        // T / Y ile başlat
+        
         if (PlayerSelectionData.player1Index != -1)
         {
             if (Input.GetKeyDown(KeyCode.T))

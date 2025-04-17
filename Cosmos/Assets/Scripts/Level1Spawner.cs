@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Level1Spawner : MonoBehaviour
 {
-    public GameObject[] characterPrefabs; // 0: Gemi 1, 1: Gemi 2
+    public GameObject[] characterPrefabs;
     public Transform player1SpawnPoint;
     public Transform player2SpawnPoint;
 
