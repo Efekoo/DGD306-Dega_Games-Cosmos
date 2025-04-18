@@ -6,6 +6,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject tripleBulletPrefab;
     public Transform firePoint;
 
+    public bool isPlayerOne = true;
     public bool isTripleShot = false;
     public float fireRate = 0.5f;
     private float fireTimer;
@@ -14,18 +15,26 @@ public class PlayerShooting : MonoBehaviour
     {
         fireTimer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space) && fireTimer >= fireRate)
+        if (isPlayerOne && Input.GetKeyDown(KeyCode.Space) && fireTimer >= fireRate)
         {
-            if (isTripleShot)
-            {
-                Instantiate(tripleBulletPrefab, firePoint.position, Quaternion.identity);
-            }
-            else
-            {
-                Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            }
-
-            fireTimer = 0f;
+            Fire();
         }
+        else if (!isPlayerOne && Input.GetKeyDown(KeyCode.RightShift) && fireTimer >= fireRate)
+        {
+            Fire();
+        }
+    }
+    void Fire()
+    {
+        if (isTripleShot)
+        {
+            Instantiate(tripleBulletPrefab, firePoint.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        }
+
+        fireTimer = 0f;
     }
 }

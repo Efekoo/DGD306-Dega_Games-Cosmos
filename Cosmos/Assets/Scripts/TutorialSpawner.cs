@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TutorialSpawner : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class TutorialSpawner : MonoBehaviour
     {
         if (PlayerSelectionData.player1Index < 0 || PlayerSelectionData.player1Index >= characterPrefabs.Length)
         {
-            Debug.LogError("Hatal� Player1 Index!");
+            Debug.LogError("Hatalı Player1 Index!");
             return;
         }
 
@@ -18,12 +18,13 @@ public class TutorialSpawner : MonoBehaviour
         spawnPos1.z = 0f;
 
         GameObject p1 = Instantiate(characterPrefabs[PlayerSelectionData.player1Index], spawnPos1, Quaternion.identity);
+        p1.GetComponent<PlayerShooting>().isPlayerOne = true; // 🔽 burada ayarlandı
 
         if (PlayerSelectionData.isCoop)
         {
             if (PlayerSelectionData.player2Index < 0 || PlayerSelectionData.player2Index >= characterPrefabs.Length)
             {
-                Debug.LogError("Hatal� Player2 Index!");
+                Debug.LogError("Hatalı Player2 Index!");
                 return;
             }
 
@@ -31,6 +32,7 @@ public class TutorialSpawner : MonoBehaviour
             spawnPos2.z = 0f;
 
             GameObject p2 = Instantiate(characterPrefabs[PlayerSelectionData.player2Index], spawnPos2, Quaternion.identity);
+            p2.GetComponent<PlayerShooting>().isPlayerOne = false; // 🔽 burada ayarlandı
         }
     }
 }
