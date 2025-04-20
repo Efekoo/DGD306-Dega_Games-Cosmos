@@ -17,7 +17,8 @@ public class Bullet : MonoBehaviour
 
             if (meteor != null)
             {
-                meteor.TakeDamage(1); // Hasar ver
+                meteor.TakeDamage(1);
+                TutorialManager.Instance.OnMeteorDestroyed();
             }
 
             Destroy(gameObject); // Mermiyi yok et

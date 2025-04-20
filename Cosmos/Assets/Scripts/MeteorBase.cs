@@ -19,7 +19,8 @@ public class MeteorBase : MonoBehaviour
 
         if (transform.position.x < destroyX)
         {
-            Destroy(gameObject); // Ekrandan çýkarsa yok et
+            TutorialManager.Instance.OnMeteorEscaped(); // Kaçan meteor olarak say
+            Destroy(gameObject);
         }
     }
 
