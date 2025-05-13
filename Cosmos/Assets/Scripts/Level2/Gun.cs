@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
-    public Bullet bullet;
+    public Bullet2 bullet; 
     Vector2 direction;
 
     public bool autoShoot = false;
@@ -21,7 +21,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        if (autoShoot && IsVisible()) 
+        if (autoShoot && IsVisible())
         {
             if (delayTimer >= shootDelaySeconds)
             {
@@ -50,11 +50,10 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
-        if (this == null) return;  
+        if (this == null) return;
 
         GameObject go = Instantiate(bullet.gameObject, transform.position, Quaternion.identity);
-        Bullet goBullet = go.GetComponent<Bullet>();
-
+        Bullet2 goBullet = go.GetComponent<Bullet2>(); 
         if (goBullet != null)
         {
             goBullet.direction = direction;

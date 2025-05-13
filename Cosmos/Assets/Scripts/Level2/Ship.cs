@@ -75,27 +75,27 @@ public class Ship : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Bullet bullet = collision.GetComponent<Bullet>();
-        if (bullet != null && bullet.isEnemy) 
+        Bullet2 bullet = collision.GetComponent<Bullet2>();
+        if (bullet != null && bullet.isEnemy)
         {
-            Destroy(gameObject); 
-            Destroy(bullet.gameObject); 
-            GoToMenu(); 
+            Destroy(gameObject);
+            Destroy(bullet.gameObject);
+            GoToMenu();
         }
 
         Destructable destructable = collision.GetComponent<Destructable>();
-        if (destructable != null) 
+        if (destructable != null)
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
             Destroy(destructable.gameObject);
-            GoToMenu(); 
+            GoToMenu();
         }
 
         MoveSin moveSinEnemy = collision.GetComponent<MoveSin>();
-        if (moveSinEnemy != null) 
+        if (moveSinEnemy != null)
         {
-            Destroy(gameObject); 
-            GoToMenu(); 
+            Destroy(gameObject);
+            GoToMenu();
         }
     }
 

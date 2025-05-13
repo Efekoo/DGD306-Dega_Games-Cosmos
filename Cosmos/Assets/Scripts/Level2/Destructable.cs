@@ -11,7 +11,7 @@ public class Destructable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Bullet bullet = collision.GetComponent<Bullet>();
+        Bullet2 bullet = collision.GetComponent<Bullet2>();
         if (bullet != null && !bullet.isEnemy)
         {
             Destroy(gameObject);
