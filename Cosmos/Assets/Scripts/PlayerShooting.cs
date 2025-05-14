@@ -11,19 +11,35 @@ public class PlayerShooting : MonoBehaviour
     public float fireRate = 0.5f;
     private float fireTimer;
 
+   
+    public bool useJoystick = false;
+
     void Update()
     {
         fireTimer += Time.deltaTime;
 
-        if (isPlayerOne && Input.GetKeyDown(KeyCode.Space) && fireTimer >= fireRate)
+        if (useJoystick)
         {
-            Fire();
+            // Atari ile ateþ
+            if (Input.GetButtonDown("Fire1") && fireTimer >= fireRate)
+            {
+                Fire();
+            }
         }
-        else if (!isPlayerOne && Input.GetKeyDown(KeyCode.RightShift) && fireTimer >= fireRate)
+        else
         {
-            Fire();
+            // Klavye ile ateþ
+            if (isPlayerOne && Input.GetKeyDown(KeyCode.Space) && fireTimer >= fireRate)
+            {
+                Fire();
+            }
+            else if (!isPlayerOne && Input.GetKeyDown(KeyCode.RightShift) && fireTimer >= fireRate)
+            {
+                Fire();
+            }
         }
     }
+
     void Fire()
     {
         if (isTripleShot)
