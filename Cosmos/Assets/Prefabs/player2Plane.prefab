@@ -229,5 +229,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   tripleBulletPrefab: {fileID: 5917885859538814937, guid: 1444acd997d94264d9a5d8ba8e95ddb5, type: 3}
   firePoint: {fileID: 5523781185418081319}
+  isPlayerOne: 0
   isTripleShot: 1
   fireRate: 0.5
+  useJoystick: 0
