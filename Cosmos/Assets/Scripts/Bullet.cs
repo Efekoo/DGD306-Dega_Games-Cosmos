@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime); // Artýk saða doðru gidiyor
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -21,7 +21,18 @@ public class Bullet : MonoBehaviour
                 TutorialManager.Instance.OnMeteorDestroyed();
             }
 
-            Destroy(gameObject); // Mermiyi yok et
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Enemy"))
+        {
+            EnemyPlane enemy = other.GetComponent<EnemyPlane>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(1);
+            }
+
+            Destroy(gameObject);
         }
     }
 }

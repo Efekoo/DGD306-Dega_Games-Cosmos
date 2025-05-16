@@ -18,7 +18,7 @@ public class TutorialSpawner : MonoBehaviour
         spawnPos1.z = 0f;
 
         GameObject p1 = Instantiate(characterPrefabs[PlayerSelectionData.player1Index], spawnPos1, Quaternion.identity);
-        p1.GetComponent<PlayerShooting>().isPlayerOne = true; // 🔽 burada ayarlandı
+        p1.GetComponent<PlayerShooting>().isPlayerOne = true;
 
         if (PlayerSelectionData.isCoop)
         {
@@ -32,7 +32,7 @@ public class TutorialSpawner : MonoBehaviour
             spawnPos2.z = 0f;
 
             GameObject p2 = Instantiate(characterPrefabs[PlayerSelectionData.player2Index], spawnPos2, Quaternion.identity);
-            p2.GetComponent<PlayerShooting>().isPlayerOne = false; // 🔽 burada ayarlandı
+            p2.GetComponent<PlayerShooting>().isPlayerOne = false;
         }
     }
 }

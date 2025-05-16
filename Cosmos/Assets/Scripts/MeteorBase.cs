@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class MeteorBase : MonoBehaviour
 {
-    public float speed = 5f;          // Hareket hýzý
-    public float destroyX = -9f;      // Ekrandan çýkýnca yok olma pozisyonu
-    public int health = 1;            // Dayanýklýlýk (küçük: 1, büyük: 2)
+    public float speed = 5f;
+    public float destroyX = -9f;
+    public int health = 1;
+
+    public float rotationSpeed = 90f;
 
     private Vector2 direction;
 
@@ -15,11 +17,16 @@ public class MeteorBase : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
+        
+        transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
+
+        
         if (transform.position.x < destroyX)
         {
-            TutorialManager.Instance.OnMeteorEscaped(); // Kaçan meteor olarak say
+            TutorialManager.Instance.OnMeteorEscaped();
             Destroy(gameObject);
         }
     }
@@ -27,10 +34,9 @@ public class MeteorBase : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-
         if (health <= 0)
         {
-            Destroy(gameObject); // Caný sýfýrlandýysa yok et
+            Destroy(gameObject);
         }
     }
 }

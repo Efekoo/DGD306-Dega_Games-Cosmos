@@ -21,7 +21,7 @@ public class TutorialManager : MonoBehaviour
     {
         meteorDestroyed++;
 
-        if (meteorDestroyed >= 20)
+        if (meteorDestroyed >= 5)
         {
             SceneManager.LoadScene("Level1");
         }
@@ -33,7 +33,7 @@ public class TutorialManager : MonoBehaviour
 
         if (meteorEscaped >= 5)
         {
-            Time.timeScale = 0f; // Oyunu durdur
+            Time.timeScale = 0f;
             tryAgainPanel.SetActive(true);
         }
     }

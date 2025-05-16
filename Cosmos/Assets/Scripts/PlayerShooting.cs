@@ -20,7 +20,7 @@ public class PlayerShooting : MonoBehaviour
 
         if (useJoystick)
         {
-            // Atari ile ateş
+            
             if (Input.GetButtonDown("Fire1") && fireTimer >= fireRate)
             {
                 Fire();
@@ -28,7 +28,7 @@ public class PlayerShooting : MonoBehaviour
         }
         else
         {
-            // Klavye ile ateş
+            
             if (isPlayerOne && Input.GetKeyDown(KeyCode.Space) && fireTimer >= fireRate)
             {
                 Fire();
