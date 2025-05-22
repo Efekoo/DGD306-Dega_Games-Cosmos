@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class TutorialManager : MonoBehaviour
     public int meteorEscaped = 0;
 
     public GameObject tryAgainPanel;
+
+    private int deadPlayers = 0;
 
     void Awake()
     {
@@ -32,6 +33,19 @@ public class TutorialManager : MonoBehaviour
         meteorEscaped++;
 
         if (meteorEscaped >= 5)
+        {
+            Time.timeScale = 0f;
+            tryAgainPanel.SetActive(true);
+        }
+    }
+
+    public void OnPlayerDied()
+    {
+        deadPlayers++;
+
+        bool isCoop = PlayerSelectionData.isCoop;
+
+        if ((isCoop && deadPlayers >= 2) || (!isCoop && deadPlayers >= 1))
         {
             Time.timeScale = 0f;
             tryAgainPanel.SetActive(true);

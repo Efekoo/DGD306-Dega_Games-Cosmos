@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3814022846424843042}
   m_Layer: 0
   m_Name: smallMeteor
-  m_TagString: Meteor
+  m_TagString: SmallMeteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,3 +168,4 @@ MonoBehaviour:
   speed: 2
   destroyX: -8.82
   health: 1
+  rotationSpeed: 90

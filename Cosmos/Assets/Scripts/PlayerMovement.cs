@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,8 +13,9 @@ public class PlayerMovement : MonoBehaviour
     public float maxY = 4.71f;
 
     [Header("Can Sistemi")]
-    public int health = 3;
-    public TMP_Text healthText;
+    public int health = 5;
+    public Image healthBarImage;
+    public Sprite[] healthSprites;
 
     void Start()
     {
@@ -53,22 +54,41 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
+        health = Mathf.Clamp(health, 0, 5);
+
         Debug.Log((isPlayerOne ? "P1" : "P2") + " canı: " + health);
         UpdateHealthUI();
 
         if (health <= 0)
         {
             Debug.Log((isPlayerOne ? "P1" : "P2") + " öldü!");
+
+            // Bu satırı ekle:
+            TutorialManager.Instance.OnPlayerDied();
+
             Destroy(gameObject);
         }
     }
 
+
     void UpdateHealthUI()
     {
-        if (healthText != null)
+        if (healthBarImage != null && healthSprites != null && health >= 0 && health <= 5)
         {
-            string label = isPlayerOne ? "P1 Health: " : "P2 Health: ";
-            healthText.text = label + health.ToString();
+            healthBarImage.sprite = healthSprites[health];
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("SmallMeteor"))
+        {
+            TakeDamage(1);
+            Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("BigMeteor"))
+        {
+            TakeDamage(2);
+            Destroy(other.gameObject);
         }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5528839761380956300}
   m_Layer: 0
   m_Name: bigMeteor
-  m_TagString: Meteor
+  m_TagString: BigMeteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,3 +168,4 @@ MonoBehaviour:
   speed: 1
   destroyX: -8.82
   health: 2
+  rotationSpeed: 90

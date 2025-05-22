@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Meteor
   - Enemy
+  - SmallMeteor
+  - BigMeteor
   layers:
   - Default
   - TransparentFX

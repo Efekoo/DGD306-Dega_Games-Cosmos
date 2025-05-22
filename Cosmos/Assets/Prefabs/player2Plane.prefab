@@ -214,6 +214,15 @@ MonoBehaviour:
   maxX: 8.34
   minY: -4.73
   maxY: 4.71
+  health: 5
+  healthBarImage: {fileID: 0}
+  healthSprites:
+  - {fileID: 4130640169021434097, guid: 2752dc1f094d91946980bce33d5d6bdb, type: 3}
+  - {fileID: -4178046375966092550, guid: d4576f1bb29b7874cb133edd5d4bbb2a, type: 3}
+  - {fileID: -6470460504253458178, guid: b8263da7905b4df4faa202087e42b7b6, type: 3}
+  - {fileID: 6937817954938267909, guid: 2a7523ebd5f27b14a9c92ee0b2fe7481, type: 3}
+  - {fileID: -855298285791758126, guid: 7fe4461245475a140bc7f80517266b8c, type: 3}
+  - {fileID: 5088316998373936774, guid: c7cee2fbd953a7744a2fe324ce915db4, type: 3}
 --- !u!114 &7209596006720425160
 MonoBehaviour:
   m_ObjectHideFlags: 0

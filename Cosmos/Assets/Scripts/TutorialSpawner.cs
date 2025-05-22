@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class TutorialSpawner : MonoBehaviour
 {
@@ -18,7 +20,10 @@ public class TutorialSpawner : MonoBehaviour
         spawnPos1.z = 0f;
 
         GameObject p1 = Instantiate(characterPrefabs[PlayerSelectionData.player1Index], spawnPos1, Quaternion.identity);
-        p1.GetComponent<PlayerShooting>().isPlayerOne = true;
+        PlayerMovement p1Move = p1.GetComponent<PlayerMovement>();
+        p1Move.isPlayerOne = true;
+        p1Move.healthBarImage = GameObject.Find("P1HealthBarImage").GetComponent<Image>();
+        p1Move.healthSprites = LoadHealthSprites();
 
         if (PlayerSelectionData.isCoop)
         {
@@ -32,7 +37,20 @@ public class TutorialSpawner : MonoBehaviour
             spawnPos2.z = 0f;
 
             GameObject p2 = Instantiate(characterPrefabs[PlayerSelectionData.player2Index], spawnPos2, Quaternion.identity);
-            p2.GetComponent<PlayerShooting>().isPlayerOne = false;
+            PlayerMovement p2Move = p2.GetComponent<PlayerMovement>();
+            p2Move.isPlayerOne = false;
+            p2Move.healthBarImage = GameObject.Find("P2HealthBarImage").GetComponent<Image>();
+            p2Move.healthSprites = LoadHealthSprites();
         }
+    }
+
+    private Sprite[] LoadHealthSprites()
+    {
+        Sprite[] sprites = new Sprite[6];
+        for (int i = 0; i <= 5; i++)
+        {
+            sprites[i] = Resources.Load<Sprite>("HealthSprites/" + i);
+        }
+        return sprites;
     }
 }
