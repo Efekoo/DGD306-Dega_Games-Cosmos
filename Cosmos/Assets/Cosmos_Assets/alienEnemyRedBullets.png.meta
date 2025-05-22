@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      alienEnemyRedBullets_0: -5120759595094133772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

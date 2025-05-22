@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      alienEnemyUFO_0: 72320929315830431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
