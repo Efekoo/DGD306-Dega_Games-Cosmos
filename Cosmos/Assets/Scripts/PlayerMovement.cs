@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Can Sistemi")]
     public int health = 3;
+    public TMP_Text healthText;
+
+    void Start()
+    {
+        UpdateHealthUI();
+    }
 
     void Update()
     {
@@ -46,13 +53,22 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
-        Debug.Log("Oyuncu canı: " + health);
+        Debug.Log((isPlayerOne ? "P1" : "P2") + " canı: " + health);
+        UpdateHealthUI();
 
         if (health <= 0)
         {
-            Debug.Log("Oyuncu öldü!");
+            Debug.Log((isPlayerOne ? "P1" : "P2") + " öldü!");
             Destroy(gameObject);
-            // Buraya Game Over paneli çağrısı eklenebilir
+        }
+    }
+
+    void UpdateHealthUI()
+    {
+        if (healthText != null)
+        {
+            string label = isPlayerOne ? "P1 Health: " : "P2 Health: ";
+            healthText.text = label + health.ToString();
         }
     }
 }
