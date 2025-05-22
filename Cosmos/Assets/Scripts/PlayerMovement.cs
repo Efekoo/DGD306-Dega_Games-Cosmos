@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -63,8 +64,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log((isPlayerOne ? "P1" : "P2") + " öldü!");
 
-            // Bu satırı ekle:
-            TutorialManager.Instance.OnPlayerDied();
+            
+            if (SceneManager.GetActiveScene().name == "Tutorial")
+            {
+                TutorialManager.Instance.OnPlayerDied();
+            }
+            else if (SceneManager.GetActiveScene().name == "Level1")
+            {
+                Level1Manager.Instance.OnPlayerDied();
+            }
 
             Destroy(gameObject);
         }

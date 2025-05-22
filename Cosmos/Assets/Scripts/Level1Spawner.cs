@@ -51,6 +51,14 @@ public class Level1Spawner : MonoBehaviour
             p2Move.healthBarImage = GameObject.Find("P2HealthBarImage").GetComponent<Image>();
             p2Move.healthSprites = LoadHealthSprites();
         }
+        if (!PlayerSelectionData.isCoop)
+        {
+            GameObject p2Bar = GameObject.Find("P2HealthBarImage");
+            if (p2Bar != null)
+            {
+                p2Bar.SetActive(false);
+            }
+        }
     }
 
     private Sprite[] LoadHealthSprites()
