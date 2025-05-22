@@ -10,11 +10,17 @@ public class EnemyBullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Player"))
     {
-        if (other.CompareTag("Player"))
+        PlayerMovement player = other.GetComponent<PlayerMovement>();
+        if (player != null)
         {
-            
-            Destroy(gameObject);
+            player.TakeDamage(1);
         }
+
+        Destroy(gameObject);
     }
+}
+
 }

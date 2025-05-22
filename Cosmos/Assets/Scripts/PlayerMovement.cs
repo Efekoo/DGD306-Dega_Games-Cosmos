@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float minY = -4.73f;
     public float maxY = 4.71f;
 
+    [Header("Can Sistemi")]
+    public int health = 3;
+
     void Update()
     {
         float horizontal = 0f;
@@ -38,5 +41,18 @@ public class PlayerMovement : MonoBehaviour
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
         transform.position = pos;
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        Debug.Log("Oyuncu canı: " + health);
+
+        if (health <= 0)
+        {
+            Debug.Log("Oyuncu öldü!");
+            Destroy(gameObject);
+            // Buraya Game Over paneli çağrısı eklenebilir
+        }
     }
 }
