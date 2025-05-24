@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      uiGameOverMainMenu_0: 4709648788393578102
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
