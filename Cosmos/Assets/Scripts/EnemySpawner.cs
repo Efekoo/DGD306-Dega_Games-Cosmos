@@ -3,8 +3,9 @@
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
-    public Transform[] spawnPoints;
     public float spawnInterval = 2f;
+
+    [Header("Random Spawn Konumları")]
     public float minY = -4f;
     public float maxY = 4f;
     public float spawnX = 9f;
@@ -23,12 +24,10 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        if (spawnPoints.Length == 0) return;
-
         int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-        int pointIndex = Random.Range(0, spawnPoints.Length);
 
-        Vector3 spawnPos = spawnPoints[pointIndex].position;
+        float randomY = Random.Range(minY, maxY);
+        Vector3 spawnPos = new Vector3(spawnX, randomY, 0f);
 
         Instantiate(enemyPrefabs[enemyIndex], spawnPos, Quaternion.identity);
     }

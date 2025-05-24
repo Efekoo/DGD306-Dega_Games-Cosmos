@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -6,51 +7,112 @@ public class PlayerShooting : MonoBehaviour
     public GameObject tripleBulletPrefab;
     public Transform firePoint;
 
+    [Header("Kontrol")]
     public bool isPlayerOne = true;
     public bool isTripleShot = false;
+    public bool useJoystick = false;
+
+    [Header("Ateşleme")]
     public float fireRate = 0.5f;
     private float fireTimer;
 
-   
-    public bool useJoystick = false;
+    [Header("Overheat Ayarları")]
+    public float maxHeat = 100f;
+    public float heatPerShot = 25f;
+    public float coolRate = 20f;
+    private float currentHeat = 0f;
+    private bool isOverheated = false;
+
+    [Header("Overheat UI")]
+    public Slider overheatSlider;
+
+    void Start()
+    {
+        ApplyOverheatSettings();
+        UpdateUI();
+    }
 
     void Update()
     {
         fireTimer += Time.deltaTime;
 
-        if (useJoystick)
+        HandleCooling();
+        UpdateUI();
+
+        if (!isOverheated && fireTimer >= fireRate)
         {
-            
-            if (Input.GetButtonDown("Fire1") && fireTimer >= fireRate)
-            {
-                Fire();
-            }
-        }
-        else
-        {
-            
-            if (isPlayerOne && Input.GetKeyDown(KeyCode.Space) && fireTimer >= fireRate)
-            {
-                Fire();
-            }
-            else if (!isPlayerOne && Input.GetKeyDown(KeyCode.RightShift) && fireTimer >= fireRate)
+            if (ShouldFire())
             {
                 Fire();
             }
         }
     }
 
-    void Fire()
+    void HandleCooling()
     {
-        if (isTripleShot)
+        if (currentHeat > 0f)
         {
-            Instantiate(tripleBulletPrefab, firePoint.position, Quaternion.identity);
+            currentHeat -= coolRate * Time.deltaTime;
+            currentHeat = Mathf.Max(currentHeat, 0f);
+        }
+
+        if (currentHeat >= maxHeat)
+            isOverheated = true;
+
+        if (isOverheated && currentHeat <= 0f)
+            isOverheated = false;
+    }
+
+    bool ShouldFire()
+    {
+        if (useJoystick)
+        {
+            return Input.GetButtonDown("Fire1");
         }
         else
         {
-            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            return isPlayerOne
+                ? Input.GetKeyDown(KeyCode.Space)
+                : Input.GetKeyDown(KeyCode.RightShift);
         }
+    }
 
+    void Fire()
+    {
+        GameObject bullet = isTripleShot ? tripleBulletPrefab : bulletPrefab;
+        Instantiate(bullet, firePoint.position, Quaternion.identity);
+
+        currentHeat += heatPerShot;
+        currentHeat = Mathf.Clamp(currentHeat, 0f, maxHeat);
         fireTimer = 0f;
+    }
+
+    void UpdateUI()
+    {
+        if (overheatSlider != null)
+        {
+            overheatSlider.value = currentHeat / maxHeat;
+        }
+    }
+
+    public void Init(bool isPlayerOneValue, Slider slider)
+    {
+        isPlayerOne = isPlayerOneValue;
+        overheatSlider = slider;
+        ApplyOverheatSettings();
+    }
+
+    void ApplyOverheatSettings()
+    {
+        if (isPlayerOne)
+        {
+            heatPerShot = 20f;
+            coolRate = 15f;
+        }
+        else
+        {
+            heatPerShot = 30f;
+            coolRate = 10f;
+        }
     }
 }

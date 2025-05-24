@@ -9,17 +9,29 @@ public class EnemyPlane : MonoBehaviour
     public float fireInterval = 2f;
     private float fireTimer;
 
+    [Header("Yok Olma Ayarý")]
+    public float destroyX = -10f; // X bu deðerin altýna düþerse yok olur
+
     void Update()
     {
+        // Hareket
         transform.Translate(Vector2.left * speed * Time.deltaTime);
 
+        // Ateþ zamanlayýcý
         fireTimer += Time.deltaTime;
         if (fireTimer >= fireInterval)
         {
             Fire();
             fireTimer = 0f;
         }
+
+        // Ekran dýþýna çýktýysa yok et
+        if (transform.position.x < destroyX)
+        {
+            Destroy(gameObject);
+        }
     }
+
     void Fire()
     {
         if (bulletPrefab != null && firePoint != null)

@@ -209,11 +209,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  isPlayerOne: 1
+  isPlayerOne: 0
   minX: -8.31
   maxX: 8.34
   minY: -4.73
   maxY: 4.71
+  health: 5
+  healthBarImage: {fileID: 0}
+  healthSprites: []
 --- !u!114 &-4921341266180894134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +232,11 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3306115504769554289, guid: b739b3ab47797c644b104c8e03fc619c, type: 3}
   tripleBulletPrefab: {fileID: 0}
   firePoint: {fileID: 8507670480345768843}
-  isPlayerOne: 1
+  isPlayerOne: 0
   isTripleShot: 0
-  fireRate: 0.5
   useJoystick: 0
+  fireRate: 0.5
+  maxHeat: 100
+  heatPerShot: 25
+  coolRate: 20
+  overheatSlider: {fileID: 0}
