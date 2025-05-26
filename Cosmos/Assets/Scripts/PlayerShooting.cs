@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
@@ -12,16 +12,20 @@ public class PlayerShooting : MonoBehaviour
     public bool isTripleShot = false;
     public bool useJoystick = false;
 
-    [Header("Ate�leme")]
+    [Header("Ateşleme")]
     public float fireRate = 0.5f;
     private float fireTimer;
 
-    [Header("Overheat Ayarlar�")]
+    [Header("Overheat Ayarları")]
     public float maxHeat = 100f;
     public float heatPerShot = 25f;
     public float coolRate = 20f;
     private float currentHeat = 0f;
+
+    private bool isCooling = false;
     private bool isOverheated = false;
+    private float overheatCooldownTimer = 0f;
+    public float overheatWaitDuration = 1f;
 
     [Header("Overheat UI")]
     public Slider overheatSlider;
@@ -36,7 +40,29 @@ public class PlayerShooting : MonoBehaviour
     {
         fireTimer += Time.deltaTime;
 
-        HandleCooling();
+        // 1 saniyelik zorunlu bekleme süreci
+        if (isOverheated)
+        {
+            overheatCooldownTimer += Time.deltaTime;
+
+            if (overheatCooldownTimer >= overheatWaitDuration)
+            {
+                isOverheated = false;
+                isCooling = true; // Ateş edebilir ama bar soğumaya başlar
+            }
+        }
+
+        // Soğuma süreci (bar düşerken)
+        if (isCooling)
+        {
+            HandleCooling();
+
+            if (currentHeat <= 0f)
+            {
+                isCooling = false;
+            }
+        }
+
         UpdateUI();
 
         if (!isOverheated && fireTimer >= fireRate)
@@ -55,12 +81,26 @@ public class PlayerShooting : MonoBehaviour
             currentHeat -= coolRate * Time.deltaTime;
             currentHeat = Mathf.Max(currentHeat, 0f);
         }
+    }
+
+    void Fire()
+    {
+        GameObject bullet = isTripleShot ? tripleBulletPrefab : bulletPrefab;
+        Instantiate(bullet, firePoint.position, Quaternion.identity);
+
+        currentHeat += heatPerShot;
+        currentHeat = Mathf.Clamp(currentHeat, 0f, maxHeat);
 
         if (currentHeat >= maxHeat)
+        {
+            currentHeat = maxHeat;
             isOverheated = true;
+            isCooling = false;
+            overheatCooldownTimer = 0f;
+            Debug.Log("🔥 OVERHEAT!");
+        }
 
-        if (isOverheated && currentHeat <= 0f)
-            isOverheated = false;
+        fireTimer = 0f;
     }
 
     bool ShouldFire()
@@ -77,21 +117,12 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    void Fire()
-    {
-        GameObject bullet = isTripleShot ? tripleBulletPrefab : bulletPrefab;
-        Instantiate(bullet, firePoint.position, Quaternion.identity);
-
-        currentHeat += heatPerShot;
-        currentHeat = Mathf.Clamp(currentHeat, 0f, maxHeat);
-        fireTimer = 0f;
-    }
-
     void UpdateUI()
     {
         if (overheatSlider != null)
         {
-            overheatSlider.value = currentHeat / maxHeat;
+            float fill = currentHeat / maxHeat;
+            overheatSlider.value = fill;
         }
     }
 
@@ -107,12 +138,12 @@ public class PlayerShooting : MonoBehaviour
         if (isPlayerOne)
         {
             heatPerShot = 20f;
-            coolRate = 15f;
+            coolRate = 20f;
         }
         else
         {
-            heatPerShot = 30f;
-            coolRate = 10f;
+            heatPerShot = 20f;
+            coolRate = 20f;
         }
     }
 }

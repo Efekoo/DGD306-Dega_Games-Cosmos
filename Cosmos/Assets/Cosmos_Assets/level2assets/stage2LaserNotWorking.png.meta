@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stage2LaserNotWorking_0: 7091192236534791531
+      stage2LaserNotWorking_1: -7457100669349003988
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

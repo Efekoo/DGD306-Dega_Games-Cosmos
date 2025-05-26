@@ -46,6 +46,16 @@ public class EnemyPlane : MonoBehaviour
 
         if (health <= 0)
         {
+            // Sadece Level1 sahnesindeyken say
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Level1")
+            {
+                if (Level1Manager.Instance != null)
+                {
+                    Level1Manager.Instance.OnEnemyDestroyed();
+                    Debug.Log("Enemy destroyed! Total: " + Level1Manager.Instance); // test için
+                }
+            }
+
             Destroy(gameObject);
         }
     }

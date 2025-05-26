@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Level1Manager : MonoBehaviour
@@ -7,6 +7,9 @@ public class Level1Manager : MonoBehaviour
 
     public GameObject tryAgainPanel;
     private int deadPlayers = 0;
+
+    private int enemiesDestroyed = 0;
+    public int enemiesToWin = 10; // Kaç düşman vurunca geçileceğini buradan ayarla
 
     void Awake()
     {
@@ -31,5 +34,16 @@ public class Level1Manager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Level1");
+    }
+
+    // ✅ Yeni eklenen kısım
+    public void OnEnemyDestroyed()
+    {
+        enemiesDestroyed++;
+
+        if (enemiesDestroyed >= enemiesToWin)
+        {
+            SceneManager.LoadScene("Level2");
+        }
     }
 }

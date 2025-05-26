@@ -64,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log((isPlayerOne ? "P1" : "P2") + " öldü!");
 
-            
             if (SceneManager.GetActiveScene().name == "Tutorial")
             {
                 TutorialManager.Instance.OnPlayerDied();
@@ -72,6 +71,10 @@ public class PlayerMovement : MonoBehaviour
             else if (SceneManager.GetActiveScene().name == "Level1")
             {
                 Level1Manager.Instance.OnPlayerDied();
+            }
+            else if (SceneManager.GetActiveScene().name == "Level2")
+            {
+                Level2Manager.Instance.OnPlayerDied();
             }
 
             Destroy(gameObject);
