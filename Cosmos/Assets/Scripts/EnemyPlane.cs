@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyPlane : MonoBehaviour
 {
@@ -9,15 +10,44 @@ public class EnemyPlane : MonoBehaviour
     public float fireInterval = 2f;
     private float fireTimer;
 
-    [Header("Yok Olma Ayar�")]
-    public float destroyX = -10f; // X bu de�erin alt�na d��erse yok olur
+    [Header("Yok Olma Ayarı")]
+    public float destroyX = -10f; // X bu değerin altına düşerse yok olur
+    
+    // Zorluk ayarları
+    public static float difficultyMultiplier = 1.0f;
+    public static int enemiesForDifficultyIncrease = 5;
+    private static int enemiesDestroyed = 0;
+    public static float speedIncreaseAmount = 0.1f;
+    
+    
+    private string currentScene;
+    
+    void Start()
+    {
+       
+        currentScene = SceneManager.GetActiveScene().name;
+        
+        
+        if (currentScene == "Level1")
+        {
+            difficultyMultiplier = 1.0f; // Level1'de normal hız
+            enemiesDestroyed = 0;
+        }
+    }
 
     void Update()
     {
-        // Hareket
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        // Level 1'de normal hız, Level 2'de artan hız kullan
+        if (currentScene == "Level2")
+        {
+            transform.Translate(Vector2.left * speed * difficultyMultiplier * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
 
-        // Ate� zamanlay�c�
+        // Ateş zamanlayıcı
         fireTimer += Time.deltaTime;
         if (fireTimer >= fireInterval)
         {
@@ -25,7 +55,7 @@ public class EnemyPlane : MonoBehaviour
             fireTimer = 0f;
         }
 
-        // Ekran d���na ��kt�ysa yok et
+        // Ekran dışına çıktıysa yok et
         if (transform.position.x < destroyX)
         {
             Destroy(gameObject);
@@ -46,17 +76,33 @@ public class EnemyPlane : MonoBehaviour
 
         if (health <= 0)
         {
+            // Sadece Level 2'de zorluk artışını uygula
+            if (currentScene == "Level2")
+            {
+                enemiesDestroyed++;
+                if (enemiesDestroyed % enemiesForDifficultyIncrease == 0)
+                {
+                    IncreaseDifficulty();
+                }
+            }
+
             // Sadece Level1 sahnesindeyken say
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Level1")
+            if (currentScene == "Level1")
             {
                 if (Level1Manager.Instance != null)
                 {
                     Level1Manager.Instance.OnEnemyDestroyed();
-                    Debug.Log("Enemy destroyed! Total: " + Level1Manager.Instance); // test i�in
                 }
             }
 
             Destroy(gameObject);
         }
+    }
+    
+    // Zorluk seviyesini artır
+    private static void IncreaseDifficulty()
+    {
+        difficultyMultiplier += speedIncreaseAmount;
+        Debug.Log("Level 2'de düşman hızı artırıldı! Yeni çarpan: " + difficultyMultiplier);
     }
 }
