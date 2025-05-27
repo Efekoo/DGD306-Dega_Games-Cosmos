@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    private Vector2 moveInput;
     public bool isPlayerOne = true;
 
     [Header("Hareket Sınırları")]
@@ -25,31 +27,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float horizontal = 0f;
-        float vertical = 0f;
-
-        if (isPlayerOne)
-        {
-            if (Input.GetKey(KeyCode.A)) horizontal = -1f;
-            if (Input.GetKey(KeyCode.D)) horizontal = 1f;
-            if (Input.GetKey(KeyCode.W)) vertical = 1f;
-            if (Input.GetKey(KeyCode.S)) vertical = -1f;
-        }
-        else
-        {
-            if (Input.GetKey(KeyCode.LeftArrow)) horizontal = -1f;
-            if (Input.GetKey(KeyCode.RightArrow)) horizontal = 1f;
-            if (Input.GetKey(KeyCode.UpArrow)) vertical = 1f;
-            if (Input.GetKey(KeyCode.DownArrow)) vertical = -1f;
-        }
-
-        Vector3 move = new Vector3(horizontal, vertical, 0f).normalized;
+        Vector3 move = new Vector3(moveInput.x, moveInput.y, 0f).normalized;
         transform.Translate(move * moveSpeed * Time.deltaTime);
 
         Vector3 pos = transform.position;
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
         transform.position = pos;
+        Debug.Log("Move input: " + moveInput);
+    }
+
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
     }
 
     public void TakeDamage(int amount)
@@ -57,30 +48,23 @@ public class PlayerMovement : MonoBehaviour
         health -= amount;
         health = Mathf.Clamp(health, 0, 5);
 
-        Debug.Log((isPlayerOne ? "P1" : "P2") + " canı: " + health);
+        Debug.Log("Can: " + health);
         UpdateHealthUI();
 
         if (health <= 0)
         {
-            Debug.Log((isPlayerOne ? "P1" : "P2") + " öldü!");
+            string scene = SceneManager.GetActiveScene().name;
 
-            if (SceneManager.GetActiveScene().name == "Tutorial")
-            {
+            if (scene == "Tutorial")
                 TutorialManager.Instance.OnPlayerDied();
-            }
-            else if (SceneManager.GetActiveScene().name == "Level1")
-            {
+            else if (scene == "Level1")
                 Level1Manager.Instance.OnPlayerDied();
-            }
-            else if (SceneManager.GetActiveScene().name == "Level2")
-            {
+            else if (scene == "Level2")
                 Level2Manager.Instance.OnPlayerDied();
-            }
 
             Destroy(gameObject);
         }
     }
-
 
     void UpdateHealthUI()
     {
@@ -89,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
             healthBarImage.sprite = healthSprites[health];
         }
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("SmallMeteor"))
