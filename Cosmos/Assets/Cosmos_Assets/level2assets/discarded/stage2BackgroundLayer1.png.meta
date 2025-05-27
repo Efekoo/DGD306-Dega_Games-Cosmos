@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 6962c633b930f1c41bbcfcfd9f1d8930
+guid: 255aa9c387ef59848a933eec4b817ce5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -598699688032703521
-    second: player2GunCharged_0
+      213: 3874728149707201725
+    second: stage2BackgroundLayer1_0
+  - first:
+      213: 826884966229737223
+    second: stage2BackgroundLayer1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player2GunCharged_0
+      name: stage2BackgroundLayer1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
-        width: 16
-        height: 10
+        y: 227
+        width: 480
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fdb6ca74ecdf0b7f0800000000000000
-      internalID: -598699688032703521
+      spriteID: dbc118419bcc5c530800000000000000
+      internalID: 3874728149707201725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stage2BackgroundLayer1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 480
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ffb3aee7fa97b00800000000000000
+      internalID: 826884966229737223
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      player2GunCharged_0: -598699688032703521
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

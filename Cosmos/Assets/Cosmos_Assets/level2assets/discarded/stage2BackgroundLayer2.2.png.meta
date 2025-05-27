@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5bfb0c91227a34f43937f94f895b9164
+guid: a18455f193d08a94cb724d1eb1c70a02
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -122,11 +122,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 124
-        height: 270
+        y: 228
+        width: 61
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -148,7 +148,7 @@ TextureImporter:
         width: 61
         height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -170,7 +170,7 @@ TextureImporter:
         width: 61
         height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -192,7 +192,7 @@ TextureImporter:
         width: 61
         height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -214,7 +214,7 @@ TextureImporter:
         width: 124
         height: 124
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -236,7 +236,7 @@ TextureImporter:
         width: 61
         height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -258,7 +258,7 @@ TextureImporter:
         width: 61
         height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 223f42718dfc1894e83e24968286afbd
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -284,14 +284,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      stage2BackgroundLayer2.2_0: -7126973899361281450
-      stage2BackgroundLayer2.2_1: -5081941482480788955
-      stage2BackgroundLayer2.2_2: -8630539239629829739
-      stage2BackgroundLayer2.2_3: -6800423146011863783
-      stage2BackgroundLayer2.2_4: 9173833214515868080
-      stage2BackgroundLayer2.2_5: -1328761730769306580
-      stage2BackgroundLayer2.2_6: -8052963695866779518
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

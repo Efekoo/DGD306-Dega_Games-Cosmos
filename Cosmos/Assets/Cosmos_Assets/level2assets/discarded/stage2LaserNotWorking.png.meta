@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 694a1961ba54533488e08f1731f12f71
+guid: 02225ae24881dcc459f17fc4c4512262
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3874728149707201725
-    second: stage2BackgroundLayer1_0
+      213: 7091192236534791531
+    second: stage2LaserNotWorking_0
   - first:
-      213: 826884966229737223
-    second: stage2BackgroundLayer1_1
+      213: -7457100669349003988
+    second: stage2LaserNotWorking_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stage2BackgroundLayer1_0
+      name: stage2LaserNotWorking_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 480
-        height: 43
+        y: 175
+        width: 10
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dbc118419bcc5c530800000000000000
-      internalID: 3874728149707201725
+      spriteID: b6df9a4b4c9f86260800000000000000
+      internalID: 7091192236534791531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stage2BackgroundLayer1_1
+      name: stage2LaserNotWorking_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 480
-        height: 43
+        width: 10
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 70ffb3aee7fa97b00800000000000000
-      internalID: 826884966229737223
+      spriteID: c2dff1d537e038890800000000000000
+      internalID: -7457100669349003988
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4adf98968083672468a53921f35a70c3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      stage2BackgroundLayer1_0: 3874728149707201725
-      stage2BackgroundLayer1_1: 826884966229737223
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

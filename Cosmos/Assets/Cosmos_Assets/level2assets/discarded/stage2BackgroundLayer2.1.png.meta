@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f45ef03a1daf0534caeb8c1481822696
+guid: c0b00afcb80756b438b8a8d849b3ca30
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -131,11 +131,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 124
-        height: 270
+        y: 228
+        width: 61
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -157,7 +157,7 @@ TextureImporter:
         width: 61
         height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,7 +179,7 @@ TextureImporter:
         width: 61
         height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -201,7 +201,7 @@ TextureImporter:
         width: 61
         height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -223,7 +223,7 @@ TextureImporter:
         width: 61
         height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -245,7 +245,7 @@ TextureImporter:
         width: 61
         height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -267,7 +267,7 @@ TextureImporter:
         width: 61
         height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -289,7 +289,7 @@ TextureImporter:
         width: 61
         height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -311,7 +311,7 @@ TextureImporter:
         width: 61
         height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -333,7 +333,7 @@ TextureImporter:
         width: 61
         height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -350,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c494639e997665742aa24488e3449bda
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -359,17 +359,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      stage2BackgroundLayer2.1_0: 6714182539589405902
-      stage2BackgroundLayer2.1_1: -1636482827286498555
-      stage2BackgroundLayer2.1_2: -5609078906994598691
-      stage2BackgroundLayer2.1_3: -7381338803378623200
-      stage2BackgroundLayer2.1_4: 3449949057190656549
-      stage2BackgroundLayer2.1_5: 7714822211889199733
-      stage2BackgroundLayer2.1_6: 6505387273886551929
-      stage2BackgroundLayer2.1_7: 1680721166516680216
-      stage2BackgroundLayer2.1_8: -4461178462943856797
-      stage2BackgroundLayer2.1_9: -2792146421381223602
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

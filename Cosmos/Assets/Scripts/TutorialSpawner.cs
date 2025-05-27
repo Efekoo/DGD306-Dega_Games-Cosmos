@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
 using UnityEngine.UI;
 
 public class TutorialSpawner : MonoBehaviour
@@ -17,7 +16,6 @@ public class TutorialSpawner : MonoBehaviour
             return;
         }
 
-        // 🎮 Player 1: Keyboard
         PlayerInput p1Input = PlayerInput.Instantiate(
         characterPrefabs[PlayerSelectionData.player1Index],
         controlScheme: "Gamepad",
@@ -35,7 +33,7 @@ public class TutorialSpawner : MonoBehaviour
         p1Shooting.isPlayerOne = true;
         p1Shooting.overheatSlider = GameObject.Find("P1OverheatSlider").GetComponent<Slider>();
 
-        // 🎮 Co-op varsa Player 2'yi de ekle
+
         if (PlayerSelectionData.isCoop)
         {
             if (PlayerSelectionData.player2Index < 0 || PlayerSelectionData.player2Index >= characterPrefabs.Length)
@@ -44,7 +42,7 @@ public class TutorialSpawner : MonoBehaviour
                 return;
             }
 
-            // Eğer en az bir gamepad varsa, Player 2'ye bağla
+
             if (Gamepad.all.Count > 0)
             {
 
@@ -72,7 +70,7 @@ public class TutorialSpawner : MonoBehaviour
         }
         else
         {
-            // Tek kişilikte P2 UI gizle
+  
             GameObject p2Bar = GameObject.Find("P2HealthBarImage");
             if (p2Bar != null) p2Bar.SetActive(false);
 

@@ -9,7 +9,7 @@ public class Level1Manager : MonoBehaviour
     private int deadPlayers = 0;
 
     private int enemiesDestroyed = 0;
-    public int enemiesToWin = 10; // Kaç düşman vurunca geçileceğini buradan ayarla
+    public int enemiesToWin = 10;
 
     void Awake()
     {
@@ -36,7 +36,7 @@ public class Level1Manager : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
-    // ✅ Yeni eklenen kısım
+   
     public void OnEnemyDestroyed()
     {
         enemiesDestroyed++;

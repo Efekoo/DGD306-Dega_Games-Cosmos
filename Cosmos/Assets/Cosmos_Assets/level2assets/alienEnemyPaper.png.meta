@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 0fdab4cf166f8c749a9ca1348e138946
+guid: 338261efbac3a0d4f810a90b49a1e5cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7091192236534791531
-    second: stage2LaserNotWorking_0
-  - first:
-      213: -7457100669349003988
-    second: stage2LaserNotWorking_1
+      213: -9160798671223880409
+    second: alienEnemyPaper_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,35 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stage2LaserNotWorking_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 175
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6df9a4b4c9f86260800000000000000
-      internalID: 7091192236534791531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stage2LaserNotWorking_1
+      name: alienEnemyPaper_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 10
-        height: 11
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c2dff1d537e038890800000000000000
-      internalID: -7457100669349003988
+      spriteID: 72584def42e4ed080800000000000000
+      internalID: -9160798671223880409
       vertices: []
       indices: 
       edges: []
@@ -159,9 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      stage2LaserNotWorking_0: 7091192236534791531
-      stage2LaserNotWorking_1: -7457100669349003988
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
