@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
@@ -10,7 +11,6 @@ public class PlayerShooting : MonoBehaviour
     [Header("Kontrol")]
     public bool isPlayerOne = true;
     public bool isTripleShot = false;
-    public bool useJoystick = false;
 
     [Header("Ateşleme")]
     public float fireRate = 0.5f;
@@ -40,38 +40,24 @@ public class PlayerShooting : MonoBehaviour
     {
         fireTimer += Time.deltaTime;
 
-        // 1 saniyelik zorunlu bekleme süreci
         if (isOverheated)
         {
             overheatCooldownTimer += Time.deltaTime;
-
             if (overheatCooldownTimer >= overheatWaitDuration)
             {
                 isOverheated = false;
-                isCooling = true; // Ateş edebilir ama bar soğumaya başlar
+                isCooling = true;
             }
         }
 
-        // Soğuma süreci (bar düşerken)
         if (isCooling)
         {
             HandleCooling();
-
             if (currentHeat <= 0f)
-            {
                 isCooling = false;
-            }
         }
 
         UpdateUI();
-
-        if (!isOverheated && fireTimer >= fireRate)
-        {
-            if (ShouldFire())
-            {
-                Fire();
-            }
-        }
     }
 
     void HandleCooling()
@@ -103,17 +89,12 @@ public class PlayerShooting : MonoBehaviour
         fireTimer = 0f;
     }
 
-    bool ShouldFire()
+    // ✅ Yeni: Input System üzerinden ateş
+    public void OnFire(InputAction.CallbackContext context)
     {
-        if (useJoystick)
+        if (context.performed && !isOverheated && fireTimer >= fireRate)
         {
-            return Input.GetButtonDown("Fire1");
-        }
-        else
-        {
-            return isPlayerOne
-                ? Input.GetKeyDown(KeyCode.Space)
-                : Input.GetKeyDown(KeyCode.RightShift);
+            Fire();
         }
     }
 

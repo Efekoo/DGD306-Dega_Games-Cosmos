@@ -19,9 +19,9 @@ public class TutorialSpawner : MonoBehaviour
 
         // 🎮 Player 1: Keyboard
         PlayerInput p1Input = PlayerInput.Instantiate(
-            characterPrefabs[PlayerSelectionData.player1Index],
-            controlScheme: "Keyboard",
-            pairWithDevice: Keyboard.current
+        characterPrefabs[PlayerSelectionData.player1Index],
+        controlScheme: "Gamepad",
+         pairWithDevice: Gamepad.all[0]
         );
         GameObject p1 = p1Input.gameObject;
         p1.transform.position = player1SpawnPoint.position;
@@ -51,7 +51,7 @@ public class TutorialSpawner : MonoBehaviour
                     PlayerInput p2Input = PlayerInput.Instantiate(
                     characterPrefabs[PlayerSelectionData.player2Index],
                     controlScheme: "Gamepad",
-                    pairWithDevice: Gamepad.all[0]
+                    pairWithDevice: Gamepad.all[1]
                 );
                 GameObject p2 = p2Input.gameObject;
                 p2.transform.position = player2SpawnPoint.position;
