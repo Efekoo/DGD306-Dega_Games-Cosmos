@@ -15,6 +15,12 @@ public class AlienEnemyUFO : MonoBehaviour
     private bool useFirst = true;
 
     private Transform player;
+    
+    // ZigZag hareketi için gerekli değişkenler
+    public float zigZagAmplitude = 2f;  // ZigZag genliği
+    public float zigZagFrequency = 1f;  // ZigZag hızı
+    private float startY;
+    private float zigZagTimer = 0f;
 
     void Start()
     {
@@ -24,6 +30,9 @@ public class AlienEnemyUFO : MonoBehaviour
         {
             player = playerObj.transform;
         }
+        
+        // Başlangıç pozisyonunu kaydet
+        startY = transform.position.y;
     }
 
     void Update()
@@ -31,14 +40,8 @@ public class AlienEnemyUFO : MonoBehaviour
         // X ekseninde sola hareket
         transform.Translate(Vector2.left * speed * Time.deltaTime, Space.World);
 
-        // Eğer player varsa Y ekseninde ona yaklaş
-        if (player != null)
-        {
-            Vector3 pos = transform.position;
-            float step = verticalFollowSpeed * Time.deltaTime;
-            pos.y = Mathf.MoveTowards(pos.y, player.position.y, step);
-            transform.position = new Vector3(transform.position.x, pos.y, transform.position.z);
-        }
+        // ZigZag hareketi
+        ZigZagMovement();
 
         // Ateş zamanı geldi mi?
         fireTimer += Time.deltaTime;
@@ -53,6 +56,30 @@ public class AlienEnemyUFO : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void ZigZagMovement()
+    {
+        zigZagTimer += Time.deltaTime;
+        
+        // Ping-pong fonksiyonu 0 ile zigZagAmplitude*2 arasında gidip gelir
+        float offset = Mathf.PingPong(zigZagTimer * zigZagFrequency, zigZagAmplitude * 2) - zigZagAmplitude;
+        
+        // Y pozisyonunu başlangıç pozisyonuna göre güncelle
+        float newY = startY + offset;
+        
+        // Eğer oyuncu varsa, onun Y pozisyonuna doğru da hareket et
+        if (player != null)
+        {
+            // Oyuncuya doğru kademeli hareketi hesapla
+            float targetY = Mathf.MoveTowards(transform.position.y, player.position.y, verticalFollowSpeed * Time.deltaTime);
+            
+            // Zig-zag ve oyuncuya takip hareketlerini birleştir (%60 zigzag, %40 oyuncu takibi)
+            newY = (newY * 0.6f) + (targetY * 0.4f);
+        }
+        
+        // Yeni pozisyonu uygula
+        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
     void Fire()
