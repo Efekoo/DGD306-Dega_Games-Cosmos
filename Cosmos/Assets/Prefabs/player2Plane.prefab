@@ -241,7 +241,6 @@ MonoBehaviour:
   firePoint: {fileID: 5523781185418081319}
   isPlayerOne: 0
   isTripleShot: 1
-  useJoystick: 0
   fireRate: 0.5
   maxHeat: 100
   heatPerShot: 25
@@ -290,7 +289,19 @@ MonoBehaviour:
     m_ActionId: 265d0c41-9a8f-48b4-b0ac-36424dd9b076
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualSenseGamepadHID/leftStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7209596006720425160}
+        m_TargetAssemblyTypeName: PlayerShooting, Assembly-CSharp
+        m_MethodName: OnFire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7030c9b0-3a62-4048-b661-f68d0cccb242
     m_ActionName: 'Player/Fire[/Keyboard/space,/Keyboard/rightShift,/DualSenseGamepadHID/buttonSouth]'
   - m_PersistentCalls:
