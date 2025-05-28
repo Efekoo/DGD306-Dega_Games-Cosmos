@@ -817,8 +817,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "PLAYER 1:\n[1] Gemi 1  |  [2] Gemi 2\n[T] Tek ba\u015F\u0131na oyna  | 
-    [Y] Co-op (2. oyuncuya kalan gemi verilir)"
+  m_text: "PLAYER 1:\nSelect [A] \n[R1] Solo  |  [R2] Co-op (2. oyuncuya kalan gemi
+    verilir)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
