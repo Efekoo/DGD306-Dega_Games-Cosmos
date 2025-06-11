@@ -43,7 +43,7 @@ public class Level1Manager : MonoBehaviour
 
         if (enemiesDestroyed >= enemiesToWin)
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Level1Boss");
         }
     }
 }

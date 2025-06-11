@@ -5,6 +5,6 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadCharacterSelectScene()
     {
-        SceneManager.LoadScene("CharacterSelect"); // sahne adýný doðru yaz
+        SceneManager.LoadScene("CharacterSelect");
     }
 }

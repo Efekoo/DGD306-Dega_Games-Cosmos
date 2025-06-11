@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject firstSelectedButton; // Start Game butonu atanacak
+    public GameObject firstSelectedButton;
 
     void Start()
     {

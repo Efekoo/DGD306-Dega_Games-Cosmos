@@ -10,6 +10,9 @@ public class TutorialSpawner : MonoBehaviour
 
     void Start()
     {
+        Sprite[] healthSprites = LoadHealthSprites();
+        Sprite[] overheatSprites = LoadOverheatSprites();
+
         if (PlayerSelectionData.player1Index < 0 || PlayerSelectionData.player1Index >= characterPrefabs.Length)
         {
             Debug.LogError("Hatalı Player1 Index!");
@@ -17,9 +20,9 @@ public class TutorialSpawner : MonoBehaviour
         }
 
         PlayerInput p1Input = PlayerInput.Instantiate(
-        characterPrefabs[PlayerSelectionData.player1Index],
-        controlScheme: "Gamepad",
-         pairWithDevice: Gamepad.all[0]
+            characterPrefabs[PlayerSelectionData.player1Index],
+            controlScheme: "Gamepad",
+            pairWithDevice: Gamepad.all[0]
         );
         GameObject p1 = p1Input.gameObject;
         p1.transform.position = player1SpawnPoint.position;
@@ -27,12 +30,14 @@ public class TutorialSpawner : MonoBehaviour
         PlayerMovement p1Move = p1.GetComponent<PlayerMovement>();
         p1Move.isPlayerOne = true;
         p1Move.healthBarImage = GameObject.Find("P1HealthBarImage").GetComponent<Image>();
-        p1Move.healthSprites = LoadHealthSprites();
+        p1Move.healthSprites = healthSprites;
 
         PlayerShooting p1Shooting = p1.GetComponent<PlayerShooting>();
-        p1Shooting.isPlayerOne = true;
-        p1Shooting.overheatSlider = GameObject.Find("P1OverheatSlider").GetComponent<Slider>();
-
+        p1Shooting.Init(
+            true,
+            GameObject.Find("P1OverheatBarImage").GetComponent<Image>(),
+            overheatSprites
+        );
 
         if (PlayerSelectionData.isCoop)
         {
@@ -42,11 +47,9 @@ public class TutorialSpawner : MonoBehaviour
                 return;
             }
 
-
-            if (Gamepad.all.Count > 0)
+            if (Gamepad.all.Count > 1)
             {
-
-                    PlayerInput p2Input = PlayerInput.Instantiate(
+                PlayerInput p2Input = PlayerInput.Instantiate(
                     characterPrefabs[PlayerSelectionData.player2Index],
                     controlScheme: "Gamepad",
                     pairWithDevice: Gamepad.all[1]
@@ -57,11 +60,14 @@ public class TutorialSpawner : MonoBehaviour
                 PlayerMovement p2Move = p2.GetComponent<PlayerMovement>();
                 p2Move.isPlayerOne = false;
                 p2Move.healthBarImage = GameObject.Find("P2HealthBarImage").GetComponent<Image>();
-                p2Move.healthSprites = LoadHealthSprites();
+                p2Move.healthSprites = healthSprites;
 
                 PlayerShooting p2Shooting = p2.GetComponent<PlayerShooting>();
-                p2Shooting.isPlayerOne = false;
-                p2Shooting.overheatSlider = GameObject.Find("P2OverheatSlider").GetComponent<Slider>();
+                p2Shooting.Init(
+                    false,
+                    GameObject.Find("P2OverheatBarImage").GetComponent<Image>(),
+                    overheatSprites
+                );
             }
             else
             {
@@ -70,11 +76,10 @@ public class TutorialSpawner : MonoBehaviour
         }
         else
         {
-  
             GameObject p2Bar = GameObject.Find("P2HealthBarImage");
             if (p2Bar != null) p2Bar.SetActive(false);
 
-            GameObject p2Overheat = GameObject.Find("P2OverheatSlider");
+            GameObject p2Overheat = GameObject.Find("P2OverheatBarImage");
             if (p2Overheat != null) p2Overheat.SetActive(false);
         }
     }
@@ -85,6 +90,16 @@ public class TutorialSpawner : MonoBehaviour
         for (int i = 0; i <= 5; i++)
         {
             sprites[i] = Resources.Load<Sprite>("HealthSprites/" + i);
+        }
+        return sprites;
+    }
+
+    private Sprite[] LoadOverheatSprites()
+    {
+        Sprite[] sprites = new Sprite[6];
+        for (int i = 0; i <= 5; i++)
+        {
+            sprites[i] = Resources.Load<Sprite>("OverheatSprites/" + i);
         }
         return sprites;
     }

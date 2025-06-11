@@ -27,8 +27,9 @@ public class PlayerShooting : MonoBehaviour
     private float overheatCooldownTimer = 0f;
     public float overheatWaitDuration = 1f;
 
-    [Header("Overheat UI")]
-    public Slider overheatSlider;
+    [Header("Overheat UI - Sprite Versiyonu")]
+    public Image overheatImage;
+    public Sprite[] overheatSprites; // 6 sprite (0 - 5)
 
     void Start()
     {
@@ -89,7 +90,6 @@ public class PlayerShooting : MonoBehaviour
         fireTimer = 0f;
     }
 
-    // ✅ Yeni: Input System üzerinden ateş
     public void OnFire(InputAction.CallbackContext context)
     {
         if (context.performed && !isOverheated && fireTimer >= fireRate)
@@ -100,17 +100,20 @@ public class PlayerShooting : MonoBehaviour
 
     void UpdateUI()
     {
-        if (overheatSlider != null)
+        if (overheatImage != null && overheatSprites != null && overheatSprites.Length > 0)
         {
             float fill = currentHeat / maxHeat;
-            overheatSlider.value = fill;
+            int index = Mathf.FloorToInt(fill * (overheatSprites.Length - 1));
+            index = Mathf.Clamp(index, 0, overheatSprites.Length - 1);
+            overheatImage.sprite = overheatSprites[index];
         }
     }
 
-    public void Init(bool isPlayerOneValue, Slider slider)
+    public void Init(bool isPlayerOneValue, Image image, Sprite[] sprites)
     {
         isPlayerOne = isPlayerOneValue;
-        overheatSlider = slider;
+        overheatImage = image;
+        overheatSprites = sprites;
         ApplyOverheatSettings();
     }
 
