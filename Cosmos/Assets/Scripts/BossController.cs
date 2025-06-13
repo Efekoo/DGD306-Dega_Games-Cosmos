@@ -19,7 +19,7 @@ public class BossController : MonoBehaviour
     private bool isDead = false;
 
     [Header("Cutscene")]
-    [SerializeField] private GameObject cutscenePanel; // RawImage'ın olduğu panel
+    [SerializeField] private GameObject cutscenePanel;
     [SerializeField] private VideoPlayer cutsceneVideoPlayer;
 
     void Start()
