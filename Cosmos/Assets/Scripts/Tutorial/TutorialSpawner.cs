@@ -10,6 +10,7 @@ public class TutorialSpawner : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("▶ TutorialSpawner başladı");
         Sprite[] healthSprites = LoadHealthSprites();
         Sprite[] overheatSprites = LoadOverheatSprites();
 

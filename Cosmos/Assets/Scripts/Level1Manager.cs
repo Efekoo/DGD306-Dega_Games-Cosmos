@@ -30,11 +30,7 @@ public class Level1Manager : MonoBehaviour
         }
     }
 
-    public void RetryLevel()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Level1");
-    }
+   
 
    
     public void OnEnemyDestroyed()

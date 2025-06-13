@@ -52,9 +52,5 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
-    public void RetryTutorial()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Tutorial");
-    }
+   
 }
