@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
         transform.position = pos;
-        Debug.Log("Move input: " + moveInput);
+        //Debug.Log("Move input: " + moveInput);
     }
 
 

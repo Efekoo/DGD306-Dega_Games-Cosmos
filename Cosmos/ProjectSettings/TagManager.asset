@@ -8,6 +8,7 @@ TagManager:
   - SmallMeteor
   - BigMeteor
   - Ground
+  - Boss
   layers:
   - Default
   - TransparentFX
