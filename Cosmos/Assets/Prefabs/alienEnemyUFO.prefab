@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   verticalFollowSpeed: 2
-  fireInterval: 1.5
+  fireInterval: 1
   bulletPrefab: {fileID: 4567175713626528543, guid: 7609bd5a5833a3e4aab3611d89fcc2b9, type: 3}
   firePoint1: {fileID: 9067898083124560028}
   firePoint2: {fileID: 3422904172491240290}

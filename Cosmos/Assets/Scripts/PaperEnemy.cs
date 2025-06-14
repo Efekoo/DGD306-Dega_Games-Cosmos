@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PaperEnemy : MonoBehaviour
 {
-    public float speed = 2f;
+    public float speed = 4f;
     public float verticalFollowSpeed = 2f;
 
-    public float fireInterval = 1.5f;
+    public float fireInterval = 2f;
     private float fireTimer = 0f;
 
     public GameObject bulletPrefab;
@@ -14,13 +14,10 @@ public class PaperEnemy : MonoBehaviour
 
     private Transform player;
 
-    public float zigZagAmplitude = 2f;
-    public float zigZagFrequency = 1f;
-    private float startY;
-    private float zigZagTimer = 0f;
+    
 
 
-    public int health = 3;
+    public int health = 2;
 
     void Start()
     {
@@ -29,8 +26,6 @@ public class PaperEnemy : MonoBehaviour
         {
             player = playerObj.transform;
         }
-
-        startY = transform.position.y;
     }
 
     void Update()
@@ -54,20 +49,21 @@ public class PaperEnemy : MonoBehaviour
 
     void ZigZagMovement()
     {
-        zigZagTimer += Time.deltaTime;
-
-        float offset = Mathf.PingPong(zigZagTimer * zigZagFrequency, zigZagAmplitude * 2) - zigZagAmplitude;
-
-        float newY = startY + offset;
-
         if (player != null)
         {
-            float targetY = Mathf.MoveTowards(transform.position.y, player.position.y, verticalFollowSpeed * Time.deltaTime);
+            float currentY = transform.position.y;
+            float targetY = Mathf.MoveTowards(currentY, player.position.y, verticalFollowSpeed * Time.deltaTime);
+            float clampedY = Mathf.Clamp(targetY, -4.73f, 4.71f);
 
-            newY = (newY * 0.6f) + (targetY * 0.4f);
+
+            float deltaY = clampedY - currentY;
+            float angle = Mathf.Clamp(deltaY * 30f, -30f, 30f);
+
+
+            transform.rotation = Quaternion.Euler(0f, 0f, -angle);
+
+            transform.position = new Vector3(transform.position.x, clampedY, transform.position.z);
         }
-
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
     void Fire()
@@ -84,7 +80,14 @@ public class PaperEnemy : MonoBehaviour
 
         if (health <= 0)
         {
+            if (Level2Manager.Instance != null)
+            {
+                Level2Manager.Instance.OnEnemyDestroyed();
+            }
+
             Destroy(gameObject);
         }
     }
+
+
 }

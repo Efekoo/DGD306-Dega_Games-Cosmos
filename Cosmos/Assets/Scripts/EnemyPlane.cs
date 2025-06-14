@@ -13,7 +13,7 @@ public class EnemyPlane : MonoBehaviour
     [Header("Yok Olma Ayarı")]
     public float destroyX = -10f;
     
-    // Zorluk ayarları
+
     public static float difficultyMultiplier = 1.0f;
     public static int enemiesForDifficultyIncrease = 5;
     private static int enemiesDestroyed = 0;

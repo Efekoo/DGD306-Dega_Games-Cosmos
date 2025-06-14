@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Boss
   - level2enemy
+  - Heart
   layers:
   - Default
   - TransparentFX

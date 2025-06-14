@@ -600,7 +600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 731142426}
-  - component: {fileID: 731142425}
+  - component: {fileID: 731142427}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -608,7 +608,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &731142425
+--- !u!4 &731142426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731142424}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.72, y: 0.01, z: -0.060664438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &731142427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -620,28 +635,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8234a104f018642b4b92d684ae4018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level2enemyPrefabs:
+  enemyPrefabs:
   - {fileID: 3903840885689729343, guid: eaba72bc747b587408ba8544bcf219ca, type: 3}
   - {fileID: 4330927140606868820, guid: ee0741a1d1ca3b449a5953bd2637a3e9, type: 3}
   spawnInterval: 2
-  minY: -4
-  maxY: 4
-  spawnX: 9
---- !u!4 &731142426
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 731142424}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.047404736, y: 0.98105997, z: -0.060664438}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  minY: -4.78
+  maxY: 4.53
+  spawnX: 9.7
 --- !u!1 &876506565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1565,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769129998}
   m_CullTransparentMesh: 1
+--- !u!1 &1839230672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1839230674}
+  - component: {fileID: 1839230673}
+  m_Layer: 0
+  m_Name: HeartSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1839230673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839230672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c998c8911916641a437672a7cccb82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPrefab: {fileID: 7105241330652134328, guid: efd2a6f06a047874897ae9c8492421e7, type: 3}
+  spawnInterval: 10
+  minX: -8
+  maxX: 8
+  minY: -4.65
+  maxY: 3.24
+--- !u!4 &1839230674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839230672}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.54, y: -4.65, z: -0.024499781}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1877217517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,6 +1808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tryAgainPanel: {fileID: 1941684292}
+  enemiesDestroyed: 0
+  targetEnemiesToDestroy: 30
 --- !u!4 &1968499602
 Transform:
   m_ObjectHideFlags: 0
@@ -1786,3 +1838,4 @@ SceneRoots:
   - {fileID: 731142426}
   - {fileID: 1968499602}
   - {fileID: 1269892901}
+  - {fileID: 1839230674}

@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
         transform.position = pos;
-        //Debug.Log("Move input: " + moveInput);
+
     }
 
 
@@ -63,6 +63,16 @@ public class PlayerMovement : MonoBehaviour
                 Level2Manager.Instance.OnPlayerDied();
 
             Destroy(gameObject);
+        }
+    }
+    public void Heal(int amount)
+    {
+        if (health < 5)
+        {
+            health += amount;
+            health = Mathf.Clamp(health, 0, 5);
+            UpdateHealthUI();
+            Debug.Log("Can alındı! Yeni can: " + health);
         }
     }
 

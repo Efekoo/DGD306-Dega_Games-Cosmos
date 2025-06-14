@@ -96,7 +96,7 @@ public class CharacterSelectManager : MonoBehaviour
         {
             PlayerSelectionData.isCoop = false;
             PlayerSelectionData.player2Index = -1;
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("Level2");
         }
     }
 
@@ -106,7 +106,7 @@ public class CharacterSelectManager : MonoBehaviour
         {
             PlayerSelectionData.isCoop = true;
             PlayerSelectionData.player2Index = (PlayerSelectionData.player1Index == 0) ? 1 : 0;
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("Level2");
         }
     }
 }

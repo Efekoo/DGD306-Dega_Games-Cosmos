@@ -55,6 +55,12 @@ public class Bullet : MonoBehaviour
             {
                 ufo.TakeDamage(1);
             }
+
+            PaperEnemy paper = other.GetComponent<PaperEnemy>();
+            if (paper != null)
+            {
+                paper.TakeDamage(1);
+            }
         }
         else if (other.CompareTag("Boss"))
         {

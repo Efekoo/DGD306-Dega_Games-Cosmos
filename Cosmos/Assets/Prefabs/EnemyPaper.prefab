@@ -42,10 +42,10 @@ GameObject:
   - component: {fileID: 1962683059969037003}
   - component: {fileID: 5478934358802551757}
   - component: {fileID: 3572534895081900732}
-  - component: {fileID: 2137190456344178342}
   - component: {fileID: 7990834202689015170}
+  - component: {fileID: 1002604596242691322}
   m_Layer: 0
-  m_Name: alienEnemyPaper_0
+  m_Name: EnemyPaper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,8 +149,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!68 &2137190456344178342
-EdgeCollider2D:
+--- !u!114 &7990834202689015170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330927140606868820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23598794fe7b914f922b6b361728bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  verticalFollowSpeed: 2
+  fireInterval: 2
+  bulletPrefab: {fileID: 7757936819006770754, guid: 461ca36c6f2c06e4c9f02e10ed607acd, type: 3}
+  firePoint: {fileID: 6339565820717937373}
+  health: 2
+--- !u!61 &1002604596242691322
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -184,34 +202,14 @@ EdgeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.32}
+    newSize: {x: 0.64, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.64, y: 0.32}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.32744282, y: 0.16754901}
-  - {x: -0.32828963, y: 0.023333073}
-  - {x: 0.32357693, y: -0.16341215}
-  - {x: 0.27445233, y: 0.022378325}
-  - {x: 0.32393116, y: 0.15638351}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!114 &7990834202689015170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4330927140606868820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f23598794fe7b914f922b6b361728bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  verticalFollowSpeed: 2
-  fireInterval: 1.5
-  bulletPrefab: {fileID: 7757936819006770754, guid: 461ca36c6f2c06e4c9f02e10ed607acd, type: 3}
-  firePoint: {fileID: 6339565820717937373}
-  zigZagAmplitude: 2
-  zigZagFrequency: 1
-  health: 3

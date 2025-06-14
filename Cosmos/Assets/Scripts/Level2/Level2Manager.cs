@@ -8,6 +8,10 @@ public class Level2Manager : MonoBehaviour
     public GameObject tryAgainPanel;
     private int deadPlayers = 0;
 
+    [Header("Level Bitirme")]
+    public int enemiesDestroyed = 0;
+    public int targetEnemiesToDestroy = 30;
+
     void Awake()
     {
         Instance = this;
@@ -27,4 +31,15 @@ public class Level2Manager : MonoBehaviour
         }
     }
 
+    public void OnEnemyDestroyed()
+    {
+        enemiesDestroyed++;
+        Debug.Log("Düþman sayýsý: " + enemiesDestroyed);
+
+        if (enemiesDestroyed >= targetEnemiesToDestroy)
+        {
+            Debug.Log("Level2 tamamlandý!");
+            SceneManager.LoadScene("Level2Boss");
+        }
+    }
 }

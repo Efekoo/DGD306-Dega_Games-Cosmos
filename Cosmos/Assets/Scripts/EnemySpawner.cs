@@ -6,9 +6,9 @@ public class EnemySpawner : MonoBehaviour
     public float spawnInterval = 2f;
 
     [Header("Random Spawn Konumları")]
-    public float minY = -4f;
-    public float maxY = 4f;
-    public float spawnX = 9f;
+    public float minY = -4.78f;
+    public float maxY = 4.53f;
+    public float spawnX = 9.7f;
 
     private float timer;
 

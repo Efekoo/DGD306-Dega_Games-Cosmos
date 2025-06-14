@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class Level2EnemySpawner : MonoBehaviour
+public class Leve2EnemySpawner : MonoBehaviour
 {
-    public GameObject[] level2enemyPrefabs;
+    public GameObject[] enemyPrefabs;
     public float spawnInterval = 2f;
-    public float minY = -4f;
-    public float maxY = 4f;
-    public float spawnX = 9f;
+
+    [Header("Random Spawn Konumlarý")]
+    public float minY = -4.78f;
+    public float maxY = 4.53f;
+    public float spawnX = 9.7f;
 
     private float timer;
 
@@ -22,10 +24,11 @@ public class Level2EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        int index = Random.Range(0, level2enemyPrefabs.Length);
-        float y = Random.Range(minY, maxY);
-        Vector3 pos = new Vector3(spawnX, y, 0f);
+        int enemyIndex = Random.Range(0, enemyPrefabs.Length);
 
-        Instantiate(level2enemyPrefabs[index], pos, Quaternion.identity);
+        float randomY = Random.Range(minY, maxY);
+        Vector3 spawnPos = new Vector3(spawnX, randomY, 0f);
+
+        Instantiate(enemyPrefabs[enemyIndex], spawnPos, Quaternion.identity);
     }
 }

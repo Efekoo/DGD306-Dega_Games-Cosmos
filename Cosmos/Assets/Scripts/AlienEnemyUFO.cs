@@ -5,7 +5,7 @@ public class AlienEnemyUFO : MonoBehaviour
     public float speed = 2f;
     public float verticalFollowSpeed = 2f;
 
-    public float fireInterval = 1.5f;
+    public float fireInterval = 0.5f;
     private float fireTimer = 0f;
 
     public GameObject bulletPrefab;
@@ -57,19 +57,21 @@ public class AlienEnemyUFO : MonoBehaviour
     void ZigZagMovement()
     {
         zigZagTimer += Time.deltaTime;
-        
+
         float offset = Mathf.PingPong(zigZagTimer * zigZagFrequency, zigZagAmplitude * 2) - zigZagAmplitude;
-        
+
         float newY = startY + offset;
-        
+
         if (player != null)
         {
             float targetY = Mathf.MoveTowards(transform.position.y, player.position.y, verticalFollowSpeed * Time.deltaTime);
-            
             newY = (newY * 0.6f) + (targetY * 0.4f);
         }
-        
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+
+
+        float clampedY = Mathf.Clamp(newY, -4.73f, 4.71f);
+
+        transform.position = new Vector3(transform.position.x, clampedY, transform.position.z);
     }
 
     void Fire()
@@ -86,9 +88,14 @@ public class AlienEnemyUFO : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        
+
         if (health <= 0)
         {
+            if (Level2Manager.Instance != null)
+            {
+                Level2Manager.Instance.OnEnemyDestroyed();
+            }
+
             Destroy(gameObject);
         }
     }
