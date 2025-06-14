@@ -79,34 +79,8 @@ public class BossController : MonoBehaviour
     void Die()
     {
         isDead = true;
-        Debug.Log("Boss öldü, cutscene başlatılıyor.");
-        StartCoroutine(BeginCutscene());
-    }
+        Debug.Log("Boss öldü, cutscene sahnesi açılıyor.");
 
-    System.Collections.IEnumerator BeginCutscene()
-    {
-        cutscenePanel.SetActive(true);
-        Debug.Log("Cutscene başladı");
-
-        string path = System.IO.Path.Combine(Application.streamingAssetsPath, "cutscenemp.mp4");
-        cutsceneVideoPlayer.url = path;
-
-
-        cutsceneVideoPlayer.loopPointReached += OnCutsceneFinished;
-
-
-        cutsceneVideoPlayer.Prepare();
-
-        while (!cutsceneVideoPlayer.isPrepared)
-        {
-            yield return null;
-        }
-
-        cutsceneVideoPlayer.Play();
-    }
-    void OnCutsceneFinished(VideoPlayer vp)
-    {
-        Debug.Log("Cutscene tamamlandı, Level2'ye geçiliyor");
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("CutsceneScene");
     }
 }

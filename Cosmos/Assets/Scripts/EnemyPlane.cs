@@ -11,7 +11,7 @@ public class EnemyPlane : MonoBehaviour
     private float fireTimer;
 
     [Header("Yok Olma Ayarı")]
-    public float destroyX = -10f; // X bu değerin altına düşerse yok olur
+    public float destroyX = -10f;
     
     // Zorluk ayarları
     public static float difficultyMultiplier = 1.0f;
@@ -30,14 +30,14 @@ public class EnemyPlane : MonoBehaviour
         
         if (currentScene == "Level1")
         {
-            difficultyMultiplier = 1.0f; // Level1'de normal hız
+            difficultyMultiplier = 1.0f;
             enemiesDestroyed = 0;
         }
     }
 
     void Update()
     {
-        // Level 1'de normal hız, Level 2'de artan hız kullan
+
         if (currentScene == "Level2")
         {
             transform.Translate(Vector2.left * speed * difficultyMultiplier * Time.deltaTime);
@@ -47,7 +47,7 @@ public class EnemyPlane : MonoBehaviour
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
 
-        // Ateş zamanlayıcı
+
         fireTimer += Time.deltaTime;
         if (fireTimer >= fireInterval)
         {
@@ -55,7 +55,7 @@ public class EnemyPlane : MonoBehaviour
             fireTimer = 0f;
         }
 
-        // Ekran dışına çıktıysa yok et
+
         if (transform.position.x < destroyX)
         {
             Destroy(gameObject);
@@ -76,7 +76,7 @@ public class EnemyPlane : MonoBehaviour
 
         if (health <= 0)
         {
-            // Sadece Level 2'de zorluk artışını uygula
+
             if (currentScene == "Level2")
             {
                 enemiesDestroyed++;
@@ -86,7 +86,7 @@ public class EnemyPlane : MonoBehaviour
                 }
             }
 
-            // Sadece Level1 sahnesindeyken say
+
             if (currentScene == "Level1")
             {
                 if (Level1Manager.Instance != null)
@@ -99,10 +99,10 @@ public class EnemyPlane : MonoBehaviour
         }
     }
     
-    // Zorluk seviyesini artır
+
     private static void IncreaseDifficulty()
     {
         difficultyMultiplier += speedIncreaseAmount;
-        Debug.Log("Level 2'de düşman hızı artırıldı! Yeni çarpan: " + difficultyMultiplier);
+        Debug.Log("Level 2'de düşman hızı artırıldı yeni çarpan: " + difficultyMultiplier);
     }
 }

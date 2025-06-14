@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MeteorBase : MonoBehaviour
 {
@@ -23,10 +24,14 @@ public class MeteorBase : MonoBehaviour
         
         transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
 
-        
+
         if (transform.position.x < destroyX)
         {
-            TutorialManager.Instance.OnMeteorEscaped();
+            if (SceneManager.GetActiveScene().name == "Tutorial" && TutorialManager.Instance != null)
+            {
+                TutorialManager.Instance.OnMeteorEscaped();
+            }
+
             Destroy(gameObject);
         }
     }
@@ -36,6 +41,11 @@ public class MeteorBase : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            if (SceneManager.GetActiveScene().name == "Tutorial" && TutorialManager.Instance != null)
+            {
+                TutorialManager.Instance.OnMeteorDestroyed();
+            }
+
             Destroy(gameObject);
         }
     }

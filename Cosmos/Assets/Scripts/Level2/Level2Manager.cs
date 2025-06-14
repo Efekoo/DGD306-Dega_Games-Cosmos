@@ -27,9 +27,4 @@ public class Level2Manager : MonoBehaviour
         }
     }
 
-    public void RetryLevel()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Level2");
-    }
 }

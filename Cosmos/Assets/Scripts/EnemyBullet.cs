@@ -101,10 +101,10 @@ public class EnemyBullet : MonoBehaviour
             }
             
           
-            else if (other.CompareTag("Shield"))
-            {
-                Destroy(gameObject);
-            }
+           // else if (other.CompareTag("Shield"))
+           // {
+               // Destroy(gameObject);
+           // }
         }
     }
 }

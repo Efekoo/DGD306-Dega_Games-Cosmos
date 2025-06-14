@@ -33,7 +33,13 @@ public class Bullet : MonoBehaviour
             if (meteor != null)
             {
                 meteor.TakeDamage(1);
-                TutorialManager.Instance?.OnMeteorDestroyed();
+
+
+                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Tutorial"
+                    && TutorialManager.Instance != null)
+                {
+                    TutorialManager.Instance.OnMeteorDestroyed();
+                }
             }
         }
         else if (other.CompareTag("Enemy"))

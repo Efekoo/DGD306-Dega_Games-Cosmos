@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AlienEnemyUFO : MonoBehaviour
+public class PaperEnemy : MonoBehaviour
 {
     public float speed = 2f;
     public float verticalFollowSpeed = 2f;
@@ -9,19 +9,17 @@ public class AlienEnemyUFO : MonoBehaviour
     private float fireTimer = 0f;
 
     public GameObject bulletPrefab;
-    public Transform firePoint1;
-    public Transform firePoint2;
+    public Transform firePoint;
 
-    private bool useFirst = true;
 
     private Transform player;
-    
+
     public float zigZagAmplitude = 2f;
     public float zigZagFrequency = 1f;
     private float startY;
     private float zigZagTimer = 0f;
 
-    
+
     public int health = 3;
 
     void Start()
@@ -31,7 +29,7 @@ public class AlienEnemyUFO : MonoBehaviour
         {
             player = playerObj.transform;
         }
-        
+
         startY = transform.position.y;
     }
 
@@ -57,36 +55,33 @@ public class AlienEnemyUFO : MonoBehaviour
     void ZigZagMovement()
     {
         zigZagTimer += Time.deltaTime;
-        
+
         float offset = Mathf.PingPong(zigZagTimer * zigZagFrequency, zigZagAmplitude * 2) - zigZagAmplitude;
-        
+
         float newY = startY + offset;
-        
+
         if (player != null)
         {
             float targetY = Mathf.MoveTowards(transform.position.y, player.position.y, verticalFollowSpeed * Time.deltaTime);
-            
+
             newY = (newY * 0.6f) + (targetY * 0.4f);
         }
-        
+
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
     void Fire()
     {
-        Transform selectedFirePoint = useFirst ? firePoint1 : firePoint2;
-        useFirst = !useFirst;
-
-        if (bulletPrefab != null && selectedFirePoint != null)
+        if (bulletPrefab != null && firePoint != null)
         {
-            Instantiate(bulletPrefab, selectedFirePoint.position, Quaternion.identity);
+            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         }
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-        
+
         if (health <= 0)
         {
             Destroy(gameObject);

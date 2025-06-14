@@ -7,4 +7,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("CharacterSelect");
     }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }

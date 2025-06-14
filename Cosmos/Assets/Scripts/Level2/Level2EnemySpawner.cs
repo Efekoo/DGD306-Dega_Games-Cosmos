@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Level2EnemySpawner : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs; // enemyPlane + AlienEnemyUFO
+    public GameObject[] level2enemyPrefabs;
     public float spawnInterval = 2f;
     public float minY = -4f;
     public float maxY = 4f;
@@ -22,10 +22,10 @@ public class Level2EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        int index = Random.Range(0, enemyPrefabs.Length);
+        int index = Random.Range(0, level2enemyPrefabs.Length);
         float y = Random.Range(minY, maxY);
         Vector3 pos = new Vector3(spawnX, y, 0f);
 
-        Instantiate(enemyPrefabs[index], pos, Quaternion.identity);
+        Instantiate(level2enemyPrefabs[index], pos, Quaternion.identity);
     }
 }
