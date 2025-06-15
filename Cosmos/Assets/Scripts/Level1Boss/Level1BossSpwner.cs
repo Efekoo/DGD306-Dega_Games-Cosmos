@@ -1,8 +1,8 @@
-ï»¿using UnityEngine;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class TutorialSpawner : MonoBehaviour
+public class Level1SBossSpwner : MonoBehaviour 
 {
     public GameObject[] characterPrefabs;
     public Transform player1SpawnPoint;
@@ -10,19 +10,19 @@ public class TutorialSpawner : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("â–¶ TutorialSpawner baÅŸladÄ±");
         Sprite[] healthSprites = LoadHealthSprites();
         Sprite[] overheatSprites = LoadOverheatSprites();
 
         if (PlayerSelectionData.player1Index < 0 || PlayerSelectionData.player1Index >= characterPrefabs.Length)
         {
-            Debug.LogError("HatalÄ± Player1 Index!");
+            Debug.LogError("Hatalý Player1 Index!");
             return;
         }
 
         PlayerInput p1Input = PlayerInput.Instantiate(
             characterPrefabs[PlayerSelectionData.player1Index]
-            
+
+
         );
         GameObject p1 = p1Input.gameObject;
         p1.transform.position = player1SpawnPoint.position;
@@ -43,7 +43,7 @@ public class TutorialSpawner : MonoBehaviour
         {
             if (PlayerSelectionData.player2Index < 0 || PlayerSelectionData.player2Index >= characterPrefabs.Length)
             {
-                Debug.LogError("HatalÄ± Player2 Index!");
+                Debug.LogError("Hatalý Player2 Index!");
                 return;
             }
 
@@ -51,7 +51,8 @@ public class TutorialSpawner : MonoBehaviour
             {
                 PlayerInput p2Input = PlayerInput.Instantiate(
                     characterPrefabs[PlayerSelectionData.player2Index]
-                    
+
+
                 );
                 GameObject p2 = p2Input.gameObject;
                 p2.transform.position = player2SpawnPoint.position;
@@ -70,7 +71,7 @@ public class TutorialSpawner : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Gamepad bulunamadÄ±. Co-op Ã§alÄ±ÅŸmaz.");
+                Debug.LogWarning("Gamepad bulunamadý. Co-op çalýþmaz.");
             }
         }
         else

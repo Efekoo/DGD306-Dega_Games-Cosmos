@@ -13,6 +13,7 @@ public class EnemyPlane : MonoBehaviour
     public GameObject explosionPrefab;
     public AudioClip laserSound;
     private AudioSource audioSource;
+    public AudioClip explosionSound;
 
 
     [Header("Yok Olma Ayarı")]
@@ -110,6 +111,10 @@ public class EnemyPlane : MonoBehaviour
             if (explosionPrefab != null)
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            }
+            if (explosionSound != null)
+            {
+                AudioSource.PlayClipAtPoint(explosionSound, transform.position);
             }
 
             Destroy(gameObject);

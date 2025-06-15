@@ -20,9 +20,9 @@ public class Level1Spawner : MonoBehaviour
         }
 
         PlayerInput p1Input = PlayerInput.Instantiate(
-            characterPrefabs[PlayerSelectionData.player1Index],
-            controlScheme: "Gamepad",
-            pairWithDevice: Gamepad.all[0]
+            characterPrefabs[PlayerSelectionData.player1Index]
+            
+
         );
         GameObject p1 = p1Input.gameObject;
         p1.transform.position = player1SpawnPoint.position;
@@ -50,9 +50,9 @@ public class Level1Spawner : MonoBehaviour
             if (Gamepad.all.Count > 1)
             {
                 PlayerInput p2Input = PlayerInput.Instantiate(
-                    characterPrefabs[PlayerSelectionData.player2Index],
-                    controlScheme: "Gamepad",
-                    pairWithDevice: Gamepad.all[1]
+                    characterPrefabs[PlayerSelectionData.player2Index]
+                    
+                    
                 );
                 GameObject p2 = p2Input.gameObject;
                 p2.transform.position = player2SpawnPoint.position;

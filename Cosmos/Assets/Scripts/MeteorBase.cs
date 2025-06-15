@@ -8,6 +8,8 @@ public class MeteorBase : MonoBehaviour
     public int health = 1;
     public GameObject explosionPrefab;
     private bool isDead = false;
+    private AudioSource audioSource;
+    public AudioClip explosionSound;
 
     public float rotationSpeed = 90f;
 
@@ -57,6 +59,10 @@ public class MeteorBase : MonoBehaviour
             if (explosionPrefab != null)
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            }
+            if (explosionSound != null)
+            {
+                AudioSource.PlayClipAtPoint(explosionSound, transform.position);
             }
 
             Destroy(gameObject);

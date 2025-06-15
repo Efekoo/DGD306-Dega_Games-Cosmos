@@ -184,6 +184,7 @@ MonoBehaviour:
   fireInterval: 2
   explosionPrefab: {fileID: 1187441617880801895, guid: 8e9ec02130783d6438c2ab7a24964e7f, type: 3}
   laserSound: {fileID: 8300000, guid: 31bd02b49e3aa844ca92278b045deb01, type: 3}
+  explosionSound: {fileID: 8300000, guid: 6ee71439ae0eb6f4f8cac9e943838f88, type: 3}
   destroyX: -10
 --- !u!82 &174308589716073298
 AudioSource:
@@ -198,7 +199,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

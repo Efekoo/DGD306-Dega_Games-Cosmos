@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class MusicManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             audioSource = GetComponent<AudioSource>();
+
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -30,14 +34,15 @@ public class MusicManager : MonoBehaviour
         PlayMusicForScene();
     }
 
-    void OnEnable()
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded += (scene, mode) => PlayMusicForScene();
+        PlayMusicForScene();
     }
 
     void PlayMusicForScene()
     {
-        string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        string sceneName = SceneManager.GetActiveScene().name;
 
         switch (sceneName)
         {
@@ -48,14 +53,10 @@ public class MusicManager : MonoBehaviour
                 PlayMusic(CreditsMusic);
                 break;
             case "Level1":
-                PlayMusic(level1Music);
-                break;
             case "Level1Boss":
                 PlayMusic(level1Music);
                 break;
             case "Level2":
-                PlayMusic(level2Music);
-                break;
             case "Level2Boss":
                 PlayMusic(level2Music);
                 break;
@@ -64,9 +65,14 @@ public class MusicManager : MonoBehaviour
 
     void PlayMusic(AudioClip clip)
     {
-        if (audioSource.clip == clip) return;
+        if (audioSource.clip != null && audioSource.clip.name == clip.name) return;
 
         audioSource.clip = clip;
+        audioSource.volume = PlayerPrefs.GetFloat("MusicVolume", 0.8f);
         audioSource.Play();
+    }
+    public void SetVolume(float value)
+    {
+        audioSource.volume = value;
     }
 }
