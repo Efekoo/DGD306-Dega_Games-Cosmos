@@ -3,7 +3,7 @@
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
-    public float spawnInterval = 2f;
+    public float spawnInterval = 1f;
 
     [Header("Random Spawn Konumları")]
     public float minY = -4.78f;

@@ -49,6 +49,7 @@ MonoBehaviour:
   level1Music: {fileID: 8300000, guid: c7f42c092d5794643996ebae230503a3, type: 3}
   level2Music: {fileID: 8300000, guid: 69cf126d155349e4cb7ab1b6423f5eea, type: 3}
   CreditsMusic: {fileID: 8300000, guid: ffbcdd896e0776c47906eff339c236c2, type: 3}
+  EndingMusic: {fileID: 8300000, guid: 0a96b4c0c306ec440a9f7eb80525c723, type: 3}
 --- !u!82 &4813863172757516007
 AudioSource:
   m_ObjectHideFlags: 0

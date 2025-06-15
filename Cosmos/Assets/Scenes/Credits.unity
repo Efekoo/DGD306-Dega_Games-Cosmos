@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 391161153}
   - component: {fileID: 391161152}
   - component: {fileID: 391161151}
+  - component: {fileID: 391161154}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -233,8 +234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.16, y: -374.01007}
-  m_SizeDelta: {x: 511.75, y: 131.93}
+  m_AnchoredPosition: {x: -0.02, y: -373.92}
+  m_SizeDelta: {x: 512.63, y: 132.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391161151
 MonoBehaviour:
@@ -330,6 +331,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391161149}
   m_CullTransparentMesh: 1
+--- !u!114 &391161154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391161149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3319ca8d1f59f3448a975b2c7524f274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: f7af6174f175c0c4f96f509b4c6cdff9, type: 3}
+  hoverSound: {fileID: 8300000, guid: 73a1d6ebcf3d5e641bc1fdd2231d93fd, type: 3}
 --- !u!1 &1052319464
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,12 +437,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -572,7 +587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0050471, y: -0.00000011921}
+  m_AnchoredPosition: {x: 0.000061035, y: 0.002533}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1962929938
@@ -649,7 +664,7 @@ Camera:
   m_GameObject: {fileID: 2058403625}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

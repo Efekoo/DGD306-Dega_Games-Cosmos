@@ -2,7 +2,7 @@
 
 public class Missile : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 2f;
     private Transform currentTarget;
 
     void Start()

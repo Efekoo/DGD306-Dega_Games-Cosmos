@@ -207,11 +207,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80.5
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 11.8
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_LocalScale.x
@@ -227,11 +227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 163.7
+      value: 177.3
       objectReference: {fileID: 0}
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 102.1
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -299,11 +299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80.5
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 11.8
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_LocalScale.x
@@ -319,11 +319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -187.2
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 101.5
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -481,8 +481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -175.1, y: 95.1}
-  m_SizeDelta: {x: 54, y: 8}
+  m_AnchoredPosition: {x: -188.9, y: 100}
+  m_SizeDelta: {x: 46, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252481481
 MonoBehaviour:
@@ -571,6 +571,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &476540282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476540283}
+  - component: {fileID: 476540285}
+  - component: {fileID: 476540284}
+  m_Layer: 5
+  m_Name: bossHealthBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &476540283
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476540282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 886892033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 86.1}
+  m_SizeDelta: {x: 301, y: 8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &476540284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476540282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5088316998373936774, guid: 09d218a02c329624da2c6148d02b59ad, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &476540285
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476540282}
+  m_CullTransparentMesh: 1
 --- !u!1 &497304417
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c998c8911916641a437672a7cccb82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heartPrefab: {fileID: 7105241330652134328, guid: efd2a6f06a047874897ae9c8492421e7, type: 3}
+  heartPrefab: {fileID: 8280721842006821812, guid: 3ad8cf37099094b4b93256e0336c04fc, type: 3}
   spawnInterval: 10
   minX: -8
   maxX: 8
@@ -733,8 +808,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175.39998, y: 95.1}
-  m_SizeDelta: {x: 54, y: 8}
+  m_AnchoredPosition: {x: 189, y: 100}
+  m_SizeDelta: {x: 46, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605360374
 MonoBehaviour:
@@ -898,6 +973,7 @@ RectTransform:
   - {fileID: 252481480}
   - {fileID: 1315764147}
   - {fileID: 921152140}
+  - {fileID: 476540283}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1050,7 +1126,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 186915782}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: RetryLevel
         m_Mode: 1
@@ -1514,27 +1590,106 @@ PrefabInstance:
       value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
-      propertyPath: firePoint
-      value: 
-      objectReference: {fileID: 1056926036}
-    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
       propertyPath: maxHealth
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
-      propertyPath: missilePrefab
+      propertyPath: bossHealthBarImage
       value: 
-      objectReference: {fileID: 2960578479586510121, guid: 113659d3b33406841b31367343da14d5, type: 3}
+      objectReference: {fileID: 476540284}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: bossHealthSprites.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5088316998373936774, guid: 09d218a02c329624da2c6148d02b59ad, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: -855298285791758126, guid: 5833d2c2716bb0d4eaeb0c9df3f86d62, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 6937817954938267909, guid: f18733d7a1822c04d842beedcb4e966c, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: -6470460504253458178, guid: 7072bc93a3419c9449e11d7c09b20155, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: -4178046375966092550, guid: 04dd8af4640274145b088a3baea00d2d, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[5]'
+      value: 
+      objectReference: {fileID: 4130640169021434097, guid: 9478619158204c741a6e4297145c2221, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[6]'
+      value: 
+      objectReference: {fileID: 3465286685962602723, guid: c202b3109290c9e4f99b407bd0add728, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[7]'
+      value: 
+      objectReference: {fileID: 7028616704906629411, guid: 94156cc4f19f06b43b78459ad6dd0336, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[8]'
+      value: 
+      objectReference: {fileID: 8288426215254106694, guid: fd57d450c42e93b47a8db51a7961722a, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[9]'
+      value: 
+      objectReference: {fileID: 4113829005332862926, guid: 7d2b446acf9d8d544a5e5b1d05f9d5f3, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[10]'
+      value: 
+      objectReference: {fileID: -5099292496197868168, guid: 954e5bedad93cc44fa72523d0641c7a9, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[11]'
+      value: 
+      objectReference: {fileID: -2966200626249415253, guid: 298af6eac3d946e43b3de5f5b85cb47a, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[12]'
+      value: 
+      objectReference: {fileID: -1540426309290004842, guid: 2c601299e8f644c48be5503ad6940c84, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[13]'
+      value: 
+      objectReference: {fileID: 8389134475083476877, guid: e76192f9baa6bcf4f80367f9d6f6bc5e, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[14]'
+      value: 
+      objectReference: {fileID: -6270953770400647376, guid: 836790ad804c80f4f8a1ff4044a38cb3, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[15]'
+      value: 
+      objectReference: {fileID: 4349915267927364619, guid: a465ac0eeb627ed4aa8322cb828089f1, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[16]'
+      value: 
+      objectReference: {fileID: 7680820834086852892, guid: 726ac16262fc6bf459e980b30541b1a6, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[17]'
+      value: 
+      objectReference: {fileID: 6660783624410144326, guid: 73f271820ef3d4742a921f3068b0fe1f, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[18]'
+      value: 
+      objectReference: {fileID: 2960402581040015946, guid: 6764b785bd525ac41b78ea453a526bfa, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[19]'
+      value: 
+      objectReference: {fileID: 7157561037332017152, guid: 96bd0df967ad8e946aa959c90e92c629, type: 3}
+    - target: {fileID: 5568325369031211639, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
+      propertyPath: 'bossHealthSprites.Array.data[20]'
+      value: 
+      objectReference: {fileID: 4164744761163438241, guid: 6d7266e28a6a34a4caf0b4808828b728, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
---- !u!4 &1056926036 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8859637911971411623, guid: 3178c5805fefa2c43a5d1f0c44f66704, type: 3}
-  m_PrefabInstance: {fileID: 1056926035}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093719071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,7 +2076,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 186915782}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: ReturnToMainMenu
         m_Mode: 1
@@ -2574,7 +2729,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 186915782}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1

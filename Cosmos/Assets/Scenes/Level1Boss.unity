@@ -256,19 +256,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80.5
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 11.8
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.1
+      value: 6.583
       objectReference: {fileID: 0}
     - target: {fileID: 416097150373182123, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.9
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 664714349914859265, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -368,19 +368,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80.5
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 11.8
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.9
+      value: -7.418
       objectReference: {fileID: 0}
     - target: {fileID: 8801662179845776769, guid: 292398ad5d6d0dc4787bade118d1db6d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.9
+      value: 3.825
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -590,12 +590,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbc7a660dc70d54d98f56f23ae21d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   spriteRenderer: {fileID: 377096955}
   closedSprite: {fileID: -5499766345362214627, guid: 35b7223e93be26c42b7c2b551026eb2b, type: 3}
   animator: {fileID: 377096956}
   openDuration: 6.1
   closedDuration: 3
+  bossHealthBarImage: {fileID: 1093269110}
+  bossHealthSprites:
+  - {fileID: 4164744761163438241, guid: 24761e9ffbff1ed4f9ff5b52ea131ac0, type: 3}
+  - {fileID: 7157561037332017152, guid: b9ba6f8bbbf21824bb36573c4dc3f24a, type: 3}
+  - {fileID: 2960402581040015946, guid: 10c6e7ee4fa839b42a8501d3c0203c35, type: 3}
+  - {fileID: 6660783624410144326, guid: 70c58e379d5a2de4696b1c5486c029db, type: 3}
+  - {fileID: 7680820834086852892, guid: af34c3fafdc20994facd2a6e9f7d3d1e, type: 3}
+  - {fileID: 4349915267927364619, guid: 03996676ad39daa4a86982b686e49d83, type: 3}
+  - {fileID: -6270953770400647376, guid: 122e2a59f5487ec4ca20e979763bd5d5, type: 3}
+  - {fileID: 8389134475083476877, guid: f0a556315ab7dd8439e58f1a69577893, type: 3}
+  - {fileID: -1540426309290004842, guid: 106ea500246a32043933a3acba1da275, type: 3}
+  - {fileID: -2966200626249415253, guid: 4e408878e0753d24a8e80103e19a0485, type: 3}
+  - {fileID: -5099292496197868168, guid: f3b717803df565c4ba2ad9c476d909ae, type: 3}
+  - {fileID: 4113829005332862926, guid: 7967c65553362d04c88e84ed99ac410c, type: 3}
+  - {fileID: 8288426215254106694, guid: 69b0cf0c14dfe924c8716ff160d96a28, type: 3}
+  - {fileID: 7028616704906629411, guid: 687890c723ab11c4cb4c07c133d1292f, type: 3}
+  - {fileID: 3465286685962602723, guid: 460cb8db06be54d47a0117ae33a6fb5f, type: 3}
+  - {fileID: 4130640169021434097, guid: 589bb6f1eb9aefd4cb04e2e9bef35d02, type: 3}
+  - {fileID: -4178046375966092550, guid: 202a34308c6e9644392e65db170c55dc, type: 3}
+  - {fileID: -6470460504253458178, guid: 94e76b0aebee41242aaac0111424035d, type: 3}
+  - {fileID: 6937817954938267909, guid: 64e15524084d13e41bf2a5e07e32cdf9, type: 3}
+  - {fileID: -855298285791758126, guid: 6a41f1b58aafa3741808e9a631e1fccb, type: 3}
+  - {fileID: 5088316998373936774, guid: c4d533eda62690f4b85ad71b185ec00c, type: 3}
   cutscenePanel: {fileID: 459179194}
   cutsceneVideoPlayer: {fileID: 0}
 --- !u!1 &418362117
@@ -867,8 +890,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175.39998, y: 95.1}
-  m_SizeDelta: {x: 54, y: 8}
+  m_AnchoredPosition: {x: 188.441, y: 100}
+  m_SizeDelta: {x: 46, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755133627
 MonoBehaviour:
@@ -990,7 +1013,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1258649736}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: RetryLevel
         m_Mode: 1
@@ -1206,8 +1229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -175.1, y: 95.1}
-  m_SizeDelta: {x: 54, y: 8}
+  m_AnchoredPosition: {x: -189.086, y: 100}
+  m_SizeDelta: {x: 46, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &902941228
 MonoBehaviour:
@@ -1400,6 +1423,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998181988}
+  m_CullTransparentMesh: 1
+--- !u!1 &1093269108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1093269109}
+  - component: {fileID: 1093269111}
+  - component: {fileID: 1093269110}
+  m_Layer: 5
+  m_Name: BossHealthBarImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1093269109
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093269108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1289946880}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000030518, y: -116.4}
+  m_SizeDelta: {x: 301, y: 8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1093269110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093269108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5088316998373936774, guid: c4d533eda62690f4b85ad71b185ec00c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1093269111
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093269108}
   m_CullTransparentMesh: 1
 --- !u!1 &1258649735
 GameObject:
@@ -1606,6 +1704,7 @@ RectTransform:
   - {fileID: 459179195}
   - {fileID: 193597228}
   - {fileID: 998181989}
+  - {fileID: 1093269109}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2031,7 +2130,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1258649736}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -2373,6 +2472,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 998046da-9521-469e-bff5-fddddadc1a61
     m_ActionName: 'PlayerSelect/CoopPlay[/DualSenseGamepadHID/rightTrigger,/DualShock4GamepadHID/rightTrigger,/Keyboard/x]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7b7c8d60-05d6-4f96-9870-947832946808
+    m_ActionName: 'Player/Pause[/DualSenseGamepadHID/leftShoulder,/DualShock4GamepadHID/leftShoulder,/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2570,7 +2673,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1258649736}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: ReturnToMainMenu
         m_Mode: 1

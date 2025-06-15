@@ -9,7 +9,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip level1Music;
     public AudioClip level2Music;
     public AudioClip CreditsMusic;
-
+    public AudioClip EndingMusic;
     private AudioSource audioSource;
 
     void Awake()
@@ -50,13 +50,18 @@ public class MusicManager : MonoBehaviour
                 PlayMusic(mainMenuMusic);
                 break;
             case "Credits":
+            case "Tutorial":
                 PlayMusic(CreditsMusic);
                 break;
+            case "Intro":
+            case "CutsceneScene":
+                PlayMusic(EndingMusic);
+                break;
             case "Level1":
-            case "Level1Boss":
+            case "Level2":
                 PlayMusic(level1Music);
                 break;
-            case "Level2":
+            case "Level1Boss":
             case "Level2Boss":
                 PlayMusic(level2Music);
                 break;

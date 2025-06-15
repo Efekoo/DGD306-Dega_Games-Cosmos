@@ -9,7 +9,7 @@ public class Level1Manager : MonoBehaviour
     private int deadPlayers = 0;
 
     private int enemiesDestroyed = 0;
-    public int enemiesToWin = 10;
+    public int enemiesToWin = 20;
 
     void Awake()
     {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 778951076017314432}
   - component: {fileID: 7536876925878973144}
   - component: {fileID: 174308589716073298}
+  - component: {fileID: 2703517163789094592}
   m_Layer: 0
   m_Name: alienEnemyRed
   m_TagString: Enemy
@@ -283,6 +284,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2703517163789094592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810789748884208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb448dc456c8d3429db2918ee4e96cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
 --- !u!1 &8074791448494264888
 GameObject:
   m_ObjectHideFlags: 0
