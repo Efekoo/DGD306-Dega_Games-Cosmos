@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 52c6582a1bfa4cd43839ace7a8dc127e
+guid: ffb8a5461c0228d43b988d3c95f3cc37
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1622835172125257239
-    second: stage2BossAnim6_0
+      213: 885586280582234834
+    second: stage2BossAnim4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stage2BossAnim6_0
+      name: stage2BossAnim4_0
       rect:
         serializedVersion: 2
-        x: 37
+        x: 0
         y: 0
-        width: 460
-        height: 252
+        width: 546
+        height: 236
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71e298badf7758610800000000000000
-      internalID: 1622835172125257239
+      spriteID: 2d24018b70c3a4c00800000000000000
+      internalID: 885586280582234834
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stage2BossAnim4_0: 885586280582234834
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

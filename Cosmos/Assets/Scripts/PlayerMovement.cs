@@ -61,8 +61,10 @@ public class PlayerMovement : MonoBehaviour
                 Level1Manager.Instance.OnPlayerDied();
             else if (scene == "Level2")
                 Level2Manager.Instance.OnPlayerDied();
+            else if (scene == "Level2Boss")
+                Level2BossManager.Instance.OnPlayerDied();
 
-            Destroy(gameObject);
+                Destroy(gameObject);
         }
     }
     public void Heal(int amount)

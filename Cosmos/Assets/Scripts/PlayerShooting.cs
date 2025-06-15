@@ -8,6 +8,10 @@ public class PlayerShooting : MonoBehaviour
     public GameObject tripleBulletPrefab;
     public Transform firePoint;
 
+    [Header("Ses")]
+    public AudioClip laserSound;
+    private AudioSource audioSource;
+
     [Header("Kontrol")]
     public bool isPlayerOne = true;
     public bool isTripleShot = false;
@@ -29,10 +33,11 @@ public class PlayerShooting : MonoBehaviour
 
     [Header("Overheat UI - Sprite Versiyonu")]
     public Image overheatImage;
-    public Sprite[] overheatSprites; // 6 sprite (0 - 5)
+    public Sprite[] overheatSprites;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         ApplyOverheatSettings();
         UpdateUI();
     }
@@ -72,6 +77,7 @@ public class PlayerShooting : MonoBehaviour
 
     void Fire()
     {
+        
         GameObject bullet = isTripleShot ? tripleBulletPrefab : bulletPrefab;
         Instantiate(bullet, firePoint.position, Quaternion.identity);
 
@@ -95,6 +101,7 @@ public class PlayerShooting : MonoBehaviour
         if (context.performed && !isOverheated && fireTimer >= fireRate)
         {
             Fire();
+            audioSource.PlayOneShot(laserSound);
         }
     }
 

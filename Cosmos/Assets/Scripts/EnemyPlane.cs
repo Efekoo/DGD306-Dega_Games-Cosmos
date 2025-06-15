@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class EnemyPlane : MonoBehaviour
@@ -9,6 +10,10 @@ public class EnemyPlane : MonoBehaviour
     public Transform firePoint;
     public float fireInterval = 2f;
     private float fireTimer;
+    public GameObject explosionPrefab;
+    public AudioClip laserSound;
+    private AudioSource audioSource;
+
 
     [Header("Yok Olma Ayarı")]
     public float destroyX = -10f;
@@ -21,18 +26,18 @@ public class EnemyPlane : MonoBehaviour
     
     
     private string currentScene;
-    
+
     void Start()
     {
-       
         currentScene = SceneManager.GetActiveScene().name;
-        
-        
+
         if (currentScene == "Level1")
         {
             difficultyMultiplier = 1.0f;
             enemiesDestroyed = 0;
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -52,6 +57,7 @@ public class EnemyPlane : MonoBehaviour
         if (fireTimer >= fireInterval)
         {
             Fire();
+            
             fireTimer = 0f;
         }
 
@@ -67,8 +73,15 @@ public class EnemyPlane : MonoBehaviour
         if (bulletPrefab != null && firePoint != null)
         {
             Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+
+            if (audioSource != null && laserSound != null)
+            {
+                audioSource.PlayOneShot(laserSound);
+            }
         }
     }
+
 
     public void TakeDamage(int damage)
     {
@@ -93,6 +106,10 @@ public class EnemyPlane : MonoBehaviour
                 {
                     Level1Manager.Instance.OnEnemyDestroyed();
                 }
+            }
+            if (explosionPrefab != null)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);

@@ -7,8 +7,10 @@ public class Bullet : MonoBehaviour
     private float timer = 0f;
     public Vector2 direction = Vector2.right;
 
+
     void Start()
     {
+
         direction = direction.normalized;
     }
 
@@ -33,13 +35,6 @@ public class Bullet : MonoBehaviour
             if (meteor != null)
             {
                 meteor.TakeDamage(1);
-
-
-                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Tutorial"
-                    && TutorialManager.Instance != null)
-                {
-                    TutorialManager.Instance.OnMeteorDestroyed();
-                }
             }
         }
         else if (other.CompareTag("Enemy"))
@@ -64,19 +59,25 @@ public class Bullet : MonoBehaviour
         }
         else if (other.CompareTag("Boss"))
         {
-            BossController boss = other.GetComponent<BossController>();
-            if (boss != null)
+
+            Level2Boss level2Boss = other.GetComponent<Level2Boss>();
+            if (level2Boss != null)
             {
-                Debug.Log("Boss'a çarptý!");
-                
+                Debug.Log("Level2Boss bulundu!");
+                level2Boss.TakeDamage(1);
+            }
+            else
+            {
+
+                BossController boss = other.GetComponent<BossController>();
                 if (boss != null)
                 {
-                    Debug.Log("Boss script bulundu, hasar veriliyor.");
+                    Debug.Log("Level1Boss/BossController bulundu!");
                     boss.TakeDamage(1);
                 }
                 else
                 {
-                    Debug.LogWarning("Boss script BULUNAMADI!");
+                    Debug.LogWarning("Hiçbir boss scripti bulunamadý!");
                 }
             }
         }

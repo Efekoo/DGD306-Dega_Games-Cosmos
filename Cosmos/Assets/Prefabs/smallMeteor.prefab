@@ -168,4 +168,5 @@ MonoBehaviour:
   speed: 2
   destroyX: -8.82
   health: 1
+  explosionPrefab: {fileID: 1187441617880801895, guid: 8e9ec02130783d6438c2ab7a24964e7f, type: 3}
   rotationSpeed: 90

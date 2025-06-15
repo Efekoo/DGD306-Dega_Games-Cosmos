@@ -6,6 +6,8 @@ public class MeteorBase : MonoBehaviour
     public float speed = 5f;
     public float destroyX = -9f;
     public int health = 1;
+    public GameObject explosionPrefab;
+    private bool isDead = false;
 
     public float rotationSpeed = 90f;
 
@@ -38,12 +40,23 @@ public class MeteorBase : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+
         health -= damage;
+        Debug.Log($"{gameObject.name} hasar aldý. Kalan can: {health}");
+
         if (health <= 0)
         {
+            isDead = true;
+
             if (SceneManager.GetActiveScene().name == "Tutorial" && TutorialManager.Instance != null)
             {
                 TutorialManager.Instance.OnMeteorDestroyed();
+            }
+
+            if (explosionPrefab != null)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);

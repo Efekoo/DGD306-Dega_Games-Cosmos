@@ -7,6 +7,7 @@ public class AlienEnemyUFO : MonoBehaviour
 
     public float fireInterval = 0.5f;
     private float fireTimer = 0f;
+    public GameObject explosionPrefab;
 
     public GameObject bulletPrefab;
     public Transform firePoint1;
@@ -20,8 +21,10 @@ public class AlienEnemyUFO : MonoBehaviour
     public float zigZagFrequency = 1f;
     private float startY;
     private float zigZagTimer = 0f;
+    public AudioClip laserSound;
+    private AudioSource audioSource;
 
-    
+
     public int health = 3;
 
     void Start()
@@ -31,8 +34,10 @@ public class AlienEnemyUFO : MonoBehaviour
         {
             player = playerObj.transform;
         }
-        
+
+        audioSource = GetComponent<AudioSource>();
         startY = transform.position.y;
+
     }
 
     void Update()
@@ -76,8 +81,14 @@ public class AlienEnemyUFO : MonoBehaviour
 
     void Fire()
     {
+
         Transform selectedFirePoint = useFirst ? firePoint1 : firePoint2;
         useFirst = !useFirst;
+        
+        if (audioSource != null && laserSound != null)
+        {
+            audioSource.PlayOneShot(laserSound);
+        }
 
         if (bulletPrefab != null && selectedFirePoint != null)
         {
@@ -94,6 +105,10 @@ public class AlienEnemyUFO : MonoBehaviour
             if (Level2Manager.Instance != null)
             {
                 Level2Manager.Instance.OnEnemyDestroyed();
+            }
+            if (explosionPrefab != null)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);

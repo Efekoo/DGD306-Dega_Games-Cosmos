@@ -21,9 +21,11 @@ public class TutorialManager : MonoBehaviour
     public void OnMeteorDestroyed()
     {
         meteorDestroyed++;
+        Debug.Log("Meteor yok edildi! Þu anki toplam: " + meteorDestroyed);
 
-        if (meteorDestroyed >= 5)
+        if (meteorDestroyed >= 10)
         {
+            Debug.Log("Level1'e geçiliyor...");
             SceneManager.LoadScene("Level1");
         }
     }

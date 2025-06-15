@@ -7,9 +7,13 @@ public class PaperEnemy : MonoBehaviour
 
     public float fireInterval = 2f;
     private float fireTimer = 0f;
+    public GameObject explosionPrefab;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
+
+    public AudioClip laserSound;
+    private AudioSource audioSource;
 
 
     private Transform player;
@@ -26,6 +30,7 @@ public class PaperEnemy : MonoBehaviour
         {
             player = playerObj.transform;
         }
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -68,8 +73,14 @@ public class PaperEnemy : MonoBehaviour
 
     void Fire()
     {
+        if (audioSource != null && laserSound != null)
+        {
+            audioSource.PlayOneShot(laserSound);
+        }
+
         if (bulletPrefab != null && firePoint != null)
         {
+
             Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         }
     }
@@ -83,6 +94,10 @@ public class PaperEnemy : MonoBehaviour
             if (Level2Manager.Instance != null)
             {
                 Level2Manager.Instance.OnEnemyDestroyed();
+            }
+            if (explosionPrefab != null)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);

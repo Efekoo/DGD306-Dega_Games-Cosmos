@@ -12,4 +12,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+
+    public void LoadSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
 }
